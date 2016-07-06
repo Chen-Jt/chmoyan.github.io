@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://itdog.cf/about/index.html">
 <meta property="og:site_name" content="Chenjiangtao's Blog">
 <meta property="og:description" content="yout: post slug: “about” title: About menoDate: “true”strong a { color: #747474; } .player { text-align: center; margin: .5em auto 0; } .player br { display: none; } .sign { text-align: right; font-st">
-<meta property="og:updated_time" content="2016-06-26T13:19:19.070Z">
+<meta property="og:updated_time" content="2016-06-26T13:25:54.702Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chenjiangtao's Blog">
 <meta name="twitter:description" content="yout: post slug: “about” title: About menoDate: “true”strong a { color: #747474; } .player { text-align: center; margin: .5em auto 0; } .player br { display: none; } .sign { text-align: right; font-st">
@@ -31,12 +31,11 @@
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
-     <!--加载特效-->
-     
-      <script src="/js/pace.js"></script>
-      <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
-      
-     var yiliaConfig = {
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
           fancybox: true,
           animate: true,
           isHome: false,
@@ -48,7 +47,6 @@
       }
   </script>
 </head>
-
 <body>
   <div id="container">
     <div class="left-col">
@@ -67,10 +65,6 @@
 
         
         
-            <form>
-                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
-            </form>
-        
         
             <div id="switch-btn" class="switch-btn">
                 <div class="icon">
@@ -81,6 +75,11 @@
                         </div>
                         <div class="icon-wrap icon-ribbon hide" data-idx="1">
                             <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
                         </div>
                         
                         
@@ -98,6 +97,8 @@
                         <li>菜单</li>
                         <li>标签</li>
                         
+                        <li>友情链接</li>
+                        
                         
                         <li>关于我</li>
                         
@@ -112,7 +113,7 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/Home">首页</a></li>
+                            <li><a href="/">首页</a></li>
                         
                             <li><a href="/works">文章</a></li>
                         
@@ -133,6 +134,8 @@
                             
                                 <a class="fl weibo" target="_blank" href="http://weibo.com/u/3263920281" title="weibo">weibo</a>
                             
+                                <a class="fl facebook" target="_blank" href="#" title="facebook">facebook</a>
+                            
                                 <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
                             
                         </ul>
@@ -142,16 +145,24 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
                     </div>
                 </section>
                 
                 
                 
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">luuman</a>
+                    
+                    </div>
+                </section>
+                
 
                 
                 
-                <section class="switch-part switch-part3">
+                <section class="switch-part switch-part4">
                 
                     <div id="js-aboutme">一直想要成为大牛的小白</div>
                 </section>
@@ -181,7 +192,7 @@
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="/Home">首页</a></li>
+                    <li><a href="/">首页</a></li>
                 
                     <li><a href="/works">文章</a></li>
                 
@@ -203,6 +214,8 @@
                     
                         <a class="weibo" target="_blank" href="http://weibo.com/u/3263920281" title="weibo">weibo</a>
                     
+                        <a class="facebook" target="_blank" href="#" title="facebook">facebook</a>
+                    
                         <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
                     
                 </div>
@@ -214,7 +227,7 @@
   
     <div class="article-meta">
       <a href="/about/index.html" class="article-date">
-      <time datetime="2016-06-26T13:19:19.102Z" itemprop="datePublished">2016-06-26</time>
+      <time datetime="2016-06-26T13:25:54.758Z" itemprop="datePublished">2016-06-26</time>
 </a>
     </div>
   
@@ -277,27 +290,16 @@
 
 
 <div class="bdsharebuttonbox">
-	   <a href="#" class="fx fa- bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-    <a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-        <a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-	    <a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-	        <a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-		    <a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-		        <a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
-			    <a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
-			        <a href="#" class="fx fa-plus-square bds_more" data-cmd="more"></a>
-				    <a href="#" class="fx fa-tencent-weibo bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
-				        <a href="#" class="fx fa-renren bds_renren" data-cmd="renren" title="分享到人人网"></a>
-					    <a href="#" class="fx fa-paw bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
-					        <a href="#" class="fx fa-envelope-o bds_mail" data-cmd="mail" title="分享到邮件分享"></a></div>`
-						    <a href="#" class="fx fa-print bds_print" data-cmd="print" title="分享到打印"></a>
-						        <a href="#" class="fx fa-share-alt bds_mshare" data-cmd="mshare" title="分享到一键分享"></a>
-							    <a href="#" class="fx bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-							        <a href="#" class="fx fa- bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-								    <a href="#" class="fx fa- bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
-								    </div>
-								    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
@@ -330,7 +332,6 @@
     <script>
         
     </script>
-
 </div>
       <footer id="footer">
     <div class="outer">
@@ -406,27 +407,6 @@ ga('send', 'pageview');
 	</script>
 
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
 <div class="scroll" id="scroll">
     <a href="#"><i class="fa fa-arrow-up"></i></a>
     <a href="#comments"><i class="fa fa-comments-o"></i></a>
@@ -469,23 +449,6 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 
-
-    <script type="text/javascript">
-      window.onload = function(){
-        document.getElementById("search").onclick = function(){
-            console.log("search")
-            search();
-        }
-      }
-      function search(){
-        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
-      }
-    </script>
 
   </div>
 </body>
