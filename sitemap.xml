@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://itdog.cf/2016/07/06/hello-world/</loc>
+    <loc>http://itdog.cf/2016/07/14/Markdown/</loc>
     
-    <lastmod>2016-07-06T15:24:10.470Z</lastmod>
+    <lastmod>2016-07-14T16:30:39.031Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://itdog.cf/2016/07/06/creat_hexo_github_blog/</loc>
+    
+    <lastmod>2016-07-14T16:26:41.635Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://itdog.cf/2016/07/09/vim/</loc>
+    
+    <lastmod>2016-07-14T14:03:31.299Z</lastmod>
     
   </url>
   

@@ -21,8 +21,6 @@
     <link rel="icon" href="/img/favicon.png">
   
   
-  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
-  
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -43,7 +41,7 @@
   <script>
       var yiliaConfig = {
           fancybox: true,
-          animate: true,
+          animate: false,
           isHome: true,
           isPost: false,
           isArchive: false,
@@ -61,7 +59,7 @@
     <header id="header" class="inner">
         <a href="/" class="profilepic">
             
-            <img lazy-src="/img/head.jpg" class="js-avatar">
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
             
         </a>
 
@@ -151,7 +149,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a>
                     </div>
                 </section>
                 
@@ -188,7 +186,7 @@
         <header id="header" class="inner">
             <a href="/" class="profilepic">
                 
-                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
                 
             </a>
             <hgroup>
@@ -231,11 +229,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Markdown" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/06/hello-world/" class="article-date">
-      <time datetime="2016-07-06T15:24:10.498Z" itemprop="datePublished">2016-07-06</time>
+      <a href="/2016/07/14/Markdown/" class="article-date">
+      <time datetime="2016-07-14T14:10:21.000Z" itemprop="datePublished">2016-07-14</time>
 </a>
     </div>
   
@@ -248,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/06/hello-world/">用github Page和hexo搭建个人静态博客</a>
+      <a class="article-title" href="/2016/07/14/Markdown/">Markdown使用技巧</a>
     </h1>
   
 
@@ -258,25 +256,132 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>本文主要记录自己用hexo 和 github pages搭建这个博客的过程遇到的问题，对整个搭建过程不详细描述，使用的环境为kali2.0 64位。</p>
-<h3 id="安装和配置git"><a href="#安装和配置git" class="headerlink" title="安装和配置git"></a>安装和配置git</h3><p>kali2.0默认安装有git，若没有安装，执行<em>sudo apt-get install git</em>安装</p>
-<h4 id="1-检查ssh-key"><a href="#1-检查ssh-key" class="headerlink" title="1.检查ssh key"></a>1.检查ssh key</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
-<p>如果显示“No such file or directory”，跳到第三步，否则继续。</p>
-<h4 id="2、备份和移除原来的ssh-key设置："><a href="#2、备份和移除原来的ssh-key设置：" class="headerlink" title="2、备份和移除原来的ssh key设置："></a>2、备份和移除原来的ssh key设置：</h4><p>因为已经存在key文件，所以需要备份旧的数据并删除：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">config	id_rsa	id_rsa.pub	known_hosts</span><br><span class="line">$ mkdir key_backup</span><br><span class="line">$ cp id_rsa* key_backup</span><br><span class="line">$ rm id_rsa*</span><br></pre></td></tr></table></figure></p>
-<h4 id="3、生成新的SSH-Key："><a href="#3、生成新的SSH-Key：" class="headerlink" title="3、生成新的SSH Key："></a>3、生成新的SSH Key：</h4><p>输入下面的代码，就可以生成新的key文件,这里全部保持默认按三次回车就行，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="4、添加SSH-Key到GitHub"><a href="#4、添加SSH-Key到GitHub" class="headerlink" title="4、添加SSH Key到GitHub"></a>4、添加SSH Key到GitHub</h4><p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置、这样以后用本用户同步文章就不需要输入密码了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id\_rsa.pub</span><br><span class="line">将输出到终端的内容手动复制下来。这里不用vim打开的原因是，vim会自动增加换行符从而产生错误。</span><br><span class="line">登陆github系统。点击右上角的 头像-&gt; Settings—&gt; SSH and GPG keys —&gt; New SSH  keys</span><br><span class="line">把你本地生成的密钥复制到里面（key文本框中）， 点击 add key </span><br><span class="line">测试</span><br><span class="line">可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</span><br><span class="line"></span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line"></span><br><span class="line">如果是下面的反馈：</span><br><span class="line"></span><br><span class="line">The authenticity of host <span class="string">'github.com (207.97.227.239)'</span> can<span class="string">'t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br><span class="line">不要紧张，输入yes就好，然后会看到：</span><br><span class="line"></span><br><span class="line">Hi cnfeat! You'</span>ve successfully authenticated, </span><br><span class="line">but GitHub does not provide shell access.</span><br><span class="line"></span><br><span class="line">设置用户信息：</span><br><span class="line">现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。</span><br><span class="line">Git会根据用户的名字和邮箱来记录提交。</span><br><span class="line">GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的。</span><br><span class="line">$ git config --global user.name <span class="string">"cnfeat"</span>//用户名</span><br><span class="line">$ git config --global user.email <span class="string">"cnfeat@gmail.com"</span>//填写自己的邮箱</span><br><span class="line"></span><br><span class="line">SSH Key配置成功，本机已成功连接到github。</span><br></pre></td></tr></table></figure></p>
-<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><p>进入<a href="https://nodejs.org/en/" target="_blank" rel="external">nodejs官网</a>下载最新版安装包。<br>这里下载的是编译好的二进制文件，进入下载目录解压并拷贝到相应系统目录就行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$tar</span> -xf node-v4.4.6-linux-x64.tar.xz </span><br><span class="line"><span class="variable">$cd</span> node-v4.4.6-linux-x64</span><br><span class="line"><span class="variable">$sudo</span> cp bin/* /usr/bin/</span><br><span class="line"><span class="variable">$node</span> -v</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://ww1.sinaimg.cn/large/c28b7899jw1f5a7vru74dj20fp02rq3r.jpg" alt="安装nodejs"><br>参考: <a href="http://http://www.xitongzhijia.net/xtjc/20150202/36680.html" target="_blank" rel="external">Linux安装Nodejs的三大方法</a></p>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>nodejs 安装好后就可以安装hexo了，安装过程中会有警告出现，但是并不影响使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> npm install hexo-cli -g</span><br><span class="line"><span class="variable">$sudo</span> npm install hexo --save</span><br><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
-<p>安装成功会有如下信息<br><img src="http://ww4.sinaimg.cn/large/c28b7899jw1f5a8j03huvj20hb0a9tbu.jpg" alt="安装hexo"></p>
-<h4 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h4><p>在你的用户home目录下新建一个hexo目录,这个目录将是hexo的工作目录，名字可以随便起<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/</span><br><span class="line">$ mkdir hexo</span><br><span class="line"><span class="variable">$cd</span> hexo</span><br><span class="line"><span class="variable">$hexo</span> init</span><br><span class="line"><span class="variable">$sudo</span> npm install</span><br></pre></td></tr></table></figure></p>
-<p>第一次使用hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
-<p>接着会有提示<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure></p>
-<p>在浏览器中打开<a href="http://localhost:4000/即可看见生成的博客。" target="_blank" rel="external">http://localhost:4000/即可看见生成的博客。</a></p>
-<h3 id="将博客同步到github"><a href="#将博客同步到github" class="headerlink" title="将博客同步到github"></a>将博客同步到github</h3><p>还是在刚才创建的那个目录下面，在_config.yml文件中，找到Deployment，然后按照如下修改yourname为你的github用户名。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></p>
-<p>修改完成后执行<em>sudo npm install hexo-deployer-git –save</em>来安装所需的插件<br>接下来执行 hexo d 即可同步到github，超级方便有木有！<br>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+              本文主要记录在使用vim用Markdown写博客时遇到的问题及解决方案
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
 
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/14/Markdown/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-vim" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/09/vim/" class="article-date">
+      <time datetime="2016-07-09T15:19:46.000Z" itemprop="datePublished">2016-07-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/09/vim/">vim配置和常用命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              本文主要记录自己平常编程过程中使用vim的一些设置和命令等，记录的可能会有些乱，每隔一段时间会进行整理，方便自己遗忘时查阅。
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/09/vim/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-creat_hexo_github_blog" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/06/creat_hexo_github_blog/" class="article-date">
+      <time datetime="2016-07-06T15:34:45.000Z" itemprop="datePublished">2016-07-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/06/creat_hexo_github_blog/">用github Page和hexo搭建个人静态博客</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              本文主要记录自己用hexo 和 github pages搭建这个博客的过程遇到的问题，对整个搭建过程不详细描述，使用的环境为kali2.0 64位。
+          
       
     </div>
     
@@ -289,6 +394,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/06/creat_hexo_github_blog/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

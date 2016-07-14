@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Chenjiangtao&#39;s Blog</title>
+  <title>Markdown使用技巧 | Chenjiangtao&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: 404 Not Found：该页无法显示 comments: false permalink: /404 fancybox: falsenoDate: “true”.article-title { font-size: 2.1em; } strong a { color: #747474; } .share { display: none; } .player { margin-le">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chenjiangtao's Blog">
-<meta property="og:url" content="http://itdog.cf/404/index.html">
+  <meta name="description" content="本文主要记录在使用vim用Markdown写博客时遇到的问题及解决方案">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown使用技巧">
+<meta property="og:url" content="http://itdog.cf/2016/07/14/Markdown/index.html">
 <meta property="og:site_name" content="Chenjiangtao's Blog">
-<meta property="og:description" content="title: 404 Not Found：该页无法显示 comments: false permalink: /404 fancybox: falsenoDate: “true”.article-title { font-size: 2.1em; } strong a { color: #747474; } .share { display: none; } .player { margin-le">
-<meta property="og:updated_time" content="2016-06-26T13:25:25.242Z">
+<meta property="og:description" content="本文主要记录在使用vim用Markdown写博客时遇到的问题及解决方案">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c28b7899jw1f5tvudj1klj20ou0fwaes.jpg">
+<meta property="og:updated_time" content="2016-07-14T16:30:39.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chenjiangtao's Blog">
-<meta name="twitter:description" content="title: 404 Not Found：该页无法显示 comments: false permalink: /404 fancybox: falsenoDate: “true”.article-title { font-size: 2.1em; } strong a { color: #747474; } .share { display: none; } .player { margin-le">
+<meta name="twitter:title" content="Markdown使用技巧">
+<meta name="twitter:description" content="本文主要记录在使用vim用Markdown写博客时遇到的问题及解决方案">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c28b7899jw1f5tvudj1klj20ou0fwaes.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Chenjiangtao&#39;s Blog" type="application/atom+xml">
   
@@ -37,7 +39,7 @@
           fancybox: true,
           animate: false,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -221,11 +223,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Markdown" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/404/index.html" class="article-date">
-      <time datetime="2016-06-26T13:25:25.274Z" itemprop="datePublished">2016-06-26</time>
+      <a href="/2016/07/14/Markdown/" class="article-date">
+      <time datetime="2016-07-14T14:10:21.000Z" itemprop="datePublished">2016-07-14</time>
 </a>
     </div>
   
@@ -234,45 +236,79 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Markdown使用技巧
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta {
-        display: none;
-    }
-    #container .article .article-title {
-        padding-right: 0;
-    }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 1.6em
-    }
-    .article-meta {
-        display: none;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    #container .article-info-post.article-info {
-      display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
+        <h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>MarkDown语法简答，易学<a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">详见</a></p>
+<h4 id="一、安装实时预览工具"><a href="#一、安装实时预览工具" class="headerlink" title="一、安装实时预览工具"></a>一、安装实时预览工具</h4><p>尽管MarkDown语法简答，但也不能排除有用错的时候，特别是刚开始使用的时候。难道要每次写完用hexo生成页面之后再改？没错，以前我就是这样干的。写了一篇我就忍不了了，于是搜了搜有没有实时预览的插件。有时候真是只有想不到没有做不到，markdown-preview,就是这样一款神器。</p>
+<h5 id="先简单介绍一下这个插件"><a href="#先简单介绍一下这个插件" class="headerlink" title="先简单介绍一下这个插件"></a>先简单介绍一下这个插件</h5><ol>
+<li>这是一款vim插件</li>
+<li>可以实时预览，你可以看到你敲的每一个字符的转换效果</li>
+<li>预览时随着你编辑的文件的滚动，生成的页面也会自己滚动</li>
+<li>可以设置用vim打开md文件时自动打开预览页面</li>
+</ol>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>我们使用Vundle(一个Vim插件管理器)来安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  Git <span class="built_in">clone</span> https://github.com/gmarik/vundle.git  ~/.vim/bundle/vundle</span><br></pre></td></tr></table></figure></p>
+<p> 配置vimrc文件</p>
+<pre><code>插播一段 vimrc的存放位置：
+    系统 vimrc 文件: &quot;$VIM/vimrc&quot;
+    用户 vimrc 文件: &quot;$HOME/.vimrc&quot;
+    用户 exrc 文件: &quot;$HOME/.exrc&quot;
+    系统 gvimrc 文件: &quot;$VIM/gvimrc&quot;
+    用户 gvimrc 文件: &quot;$HOME/.gvimrc&quot;
+    系统菜单文件: &quot;$VIMRUNTIME/menu.vim&quot;
+    $VIM 预设值: &quot;/usr/share/vim&quot;
+</code></pre><p>配置不同地方的vimrc文件作用的范围也就不同。由于我们的vundle是安装在当前用户的目录下的，所以我们修改当前用户的vimrc配置文件即可，即只对当前用户有效。<br>打开配置文件<br>vim ~/.vimrc<br>添加如下信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> rtp+=~/.vim/bundle/vundle/  </span><br><span class="line">call vundle<span class="comment">#rc() </span></span><br><span class="line">Plugin <span class="string">'iamcco/markdown-preview.vim'</span></span><br></pre></td></tr></table></figure></p>
+<p>然后运行<code>:PluginInstall</code><br>稍等片刻左下角出现”Done”则说明markdown-preview安装成功<br><img src="http://ww1.sinaimg.cn/large/c28b7899jw1f5tvudj1klj20ou0fwaes.jpg" alt="PluginInstall"></p>
+<h4 id="使用和设置"><a href="#使用和设置" class="headerlink" title="使用和设置"></a>使用和设置</h4><h5 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h5><pre><code>MarkdownPreview
+&quot; 在打开 markdown 文件后，使用该命令可以打开预览窗口
+MarkdownPreviewStop
+   &quot; 关闭 markdown 预览窗口，并停止开启的服务进程
+</code></pre><h5 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h5><p><code>vim ~/.vim/bundle/markdown-preview.vim/plugin/mkdp.vim</code></p>
+<pre><code>vth_to_chrome = &quot;firefox &amp;&gt;log&quot;
+&quot; 设置 浏览器 的路径（或是启动 浏览器 的命令）
 
+let g:mkdp_auto_start = 1
+&quot; 设置为 1 可以在打开 markdown 文件的时候自动打开浏览器预览，只在打开
+&quot; markdown 文件的时候打开一次
 
-          
-        <p>title: 404 Not Found：该页无法显示 comments: false permalink: /404 fancybox: false<br>noDate: “true”<br>.article-title { font-size: 2.1em; } strong a { color: #747474; } .share { display: none; } .player { margin-left: -10px; } .sign { text-align: right; font-style: italic; } #page-visit { display: none; } .center { text-align: center; height: 2.5em; font-weight: bold; } .search2 { height: 2.2em; font-size: 1em; width: 50%; margin: auto 24%; color: #727272; opacity: .6; border: 2px solid lightgray; } .search2:hover { opacity: 1; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) }; .article-entry hr { margin: 0; } .pic { text-align: center; margin: 0; } .pic br { display: none; }<br>你进入了神秘之地</p>
+let g:mkdp_auto_open = 1
+&quot; 设置为 1 在编辑 markdown 的时候检查预览窗口是否已经打开，否则自动打开预
+&quot; 览窗口
+
+let g:mkdp_auto_close = 1
+&quot; 在切换 buffer 的时候自动关闭预览窗口，设置为 0 则在切换 buffer 的时候不
+&quot; 自动关闭预览窗口
+
+let g:mkdp_refresh_slow = 0
+&quot; 设置为 1 则只有在保存文件，或退出插入模式的时候更新预览，默认为 0，实时
+&quot; 更新预览
+
+let g:mkdp_command_for_global = 0
+&quot; 设置为 1 则所有文件都可以使用 MarkdownPreview 进行预览，默认只有 markdown
+&quot; 文件可以使用改命令im ~/.vimrc
+</code></pre><p><a href="https://github.com/iamcco/markdown-preview.vim" target="_blank" rel="external">详细信息</a></p>
 
       
     </div>
@@ -280,10 +316,67 @@
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/07/14/Markdown/">Markdown使用技巧</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 chenjiangtao 的个人博客">chenjiangtao</a></p>
+        <p><span>发布时间:</span>2016年07月14日 - 22时10分</p>
+        <p><span>最后更新:</span>2016年07月15日 - 00时30分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/07/14/Markdown/" title="Markdown使用技巧">http://itdog.cf/2016/07/14/Markdown/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://itdog.cf/2016/07/14/Markdown/　　作者: chenjiangtao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/09/vim/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vim配置和常用命令</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#语法"><span class="toc-number">1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一、安装实时预览工具"><span class="toc-number">2.</span> <span class="toc-text">一、安装实时预览工具</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#先简单介绍一下这个插件"><span class="toc-number">2.1.</span> <span class="toc-text">先简单介绍一下这个插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装"><span class="toc-number">2.2.</span> <span class="toc-text">安装</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用和设置"><span class="toc-number">3.</span> <span class="toc-text">使用和设置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#命令"><span class="toc-number">3.1.</span> <span class="toc-text">命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改配置文件"><span class="toc-number">3.2.</span> <span class="toc-text">修改配置文件</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
 
 
 
@@ -304,7 +397,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="404/index.html" data-title="" data-url="http://itdog.cf/404/index.html"></div>
+    <div class="ds-thread" data-thread-key="2016/07/14/Markdown/" data-title="Markdown使用技巧" data-url="http://itdog.cf/2016/07/14/Markdown/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -324,6 +417,37 @@
     
 
 
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/07/09/vim/" title="下一篇: vim配置和常用命令">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/Markdown/">Markdown使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/vim/">vim配置和常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/creat_hexo_github_blog/">用github Page和hexo搭建个人静态博客</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
 
 

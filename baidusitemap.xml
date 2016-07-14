@@ -4,14 +4,50 @@
 
     
   <url>
-    <loc>http://itdog.cf/2016/07/06/hello-world/</loc>
-    <lastmod>2016-07-06T15:24:10.470Z</lastmod>
+    <loc>http://itdog.cf/2016/07/14/Markdown/</loc>
+    <lastmod>2016-07-14T16:30:39.031Z</lastmod>
+    <data>
+        <display>
+        <title>Markdown使用技巧</title>
+        <pubTime>2016-07-14T14:10:21.000Z</pubTime>
+        
+        <tag>vim</tag>
+         
+        <tag>Markdown</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://itdog.cf/2016/07/06/creat_hexo_github_blog/</loc>
+    <lastmod>2016-07-14T16:26:41.635Z</lastmod>
     <data>
         <display>
         <title>用github Page和hexo搭建个人静态博客</title>
-        <pubTime>2016-07-06T15:24:10.498Z</pubTime>
+        <pubTime>2016-07-06T15:34:45.000Z</pubTime>
         
         <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://itdog.cf/2016/07/09/vim/</loc>
+    <lastmod>2016-07-14T14:03:31.299Z</lastmod>
+    <data>
+        <display>
+        <title>vim配置和常用命令</title>
+        <pubTime>2016-07-09T15:19:46.000Z</pubTime>
+        
+        <tag>vim</tag>
          
          
            

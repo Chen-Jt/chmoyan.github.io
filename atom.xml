@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itdog.cf/"/>
-  <updated>2016-07-06T15:24:10.470Z</updated>
+  <updated>2016-07-14T16:30:39.031Z</updated>
   <id>http://itdog.cf/</id>
   
   <author>
@@ -16,14 +16,106 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>用github Page和hexo搭建个人静态博客</title>
-    <link href="http://itdog.cf/2016/07/06/hello-world/"/>
-    <id>http://itdog.cf/2016/07/06/hello-world/</id>
-    <published>2016-07-06T15:24:10.498Z</published>
-    <updated>2016-07-06T15:24:10.470Z</updated>
+    <title>Markdown使用技巧</title>
+    <link href="http://itdog.cf/2016/07/14/Markdown/"/>
+    <id>http://itdog.cf/2016/07/14/Markdown/</id>
+    <published>2016-07-14T14:10:21.000Z</published>
+    <updated>2016-07-14T16:30:39.031Z</updated>
     
-    <content type="html">&lt;p&gt;本文主要记录自己用hexo 和 github pages搭建这个博客的过程遇到的问题，对整个搭建过程不详细描述，使用的环境为kali2.0 64位。&lt;/p&gt;
-&lt;h3 id=&quot;安装和配置git&quot;&gt;&lt;a href=&quot;#安装和配置git&quot; class=&quot;headerlink&quot; title=&quot;安装和配置git&quot;&gt;&lt;/a&gt;安装和配置git&lt;/h3&gt;&lt;p&gt;kali2.0默认安装有git，若没有安装，执行&lt;em&gt;sudo apt-get install git&lt;/em&gt;安装&lt;/p&gt;
+    <content type="html">&lt;h4 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h4&gt;&lt;p&gt;MarkDown语法简答，易学&lt;a href=&quot;http://wowubuntu.com/markdown/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;详见&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;一、安装实时预览工具&quot;&gt;&lt;a href=&quot;#一、安装实时预览工具&quot; class=&quot;headerlink&quot; title=&quot;一、安装实时预览工具&quot;&gt;&lt;/a&gt;一、安装实时预览工具&lt;/h4&gt;&lt;p&gt;尽管MarkDown语法简答，但也不能排除有用错的时候，特别是刚开始使用的时候。难道要每次写完用hexo生成页面之后再改？没错，以前我就是这样干的。写了一篇我就忍不了了，于是搜了搜有没有实时预览的插件。有时候真是只有想不到没有做不到，markdown-preview,就是这样一款神器。&lt;/p&gt;
+&lt;h5 id=&quot;先简单介绍一下这个插件&quot;&gt;&lt;a href=&quot;#先简单介绍一下这个插件&quot; class=&quot;headerlink&quot; title=&quot;先简单介绍一下这个插件&quot;&gt;&lt;/a&gt;先简单介绍一下这个插件&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;这是一款vim插件&lt;/li&gt;
+&lt;li&gt;可以实时预览，你可以看到你敲的每一个字符的转换效果&lt;/li&gt;
+&lt;li&gt;预览时随着你编辑的文件的滚动，生成的页面也会自己滚动&lt;/li&gt;
+&lt;li&gt;可以设置用vim打开md文件时自动打开预览页面&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h5&gt;&lt;p&gt;我们使用Vundle(一个Vim插件管理器)来安装&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$  Git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; https://github.com/gmarik/vundle.git  ~/.vim/bundle/vundle&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt; 配置vimrc文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;插播一段 vimrc的存放位置：
+    系统 vimrc 文件: &amp;quot;$VIM/vimrc&amp;quot;
+    用户 vimrc 文件: &amp;quot;$HOME/.vimrc&amp;quot;
+    用户 exrc 文件: &amp;quot;$HOME/.exrc&amp;quot;
+    系统 gvimrc 文件: &amp;quot;$VIM/gvimrc&amp;quot;
+    用户 gvimrc 文件: &amp;quot;$HOME/.gvimrc&amp;quot;
+    系统菜单文件: &amp;quot;$VIMRUNTIME/menu.vim&amp;quot;
+    $VIM 预设值: &amp;quot;/usr/share/vim&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;配置不同地方的vimrc文件作用的范围也就不同。由于我们的vundle是安装在当前用户的目录下的，所以我们修改当前用户的vimrc配置文件即可，即只对当前用户有效。&lt;br&gt;打开配置文件&lt;br&gt;vim ~/.vimrc&lt;br&gt;添加如下信息&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; rtp+=~/.vim/bundle/vundle/  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;call vundle&lt;span class=&quot;comment&quot;&gt;#rc() &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Plugin &lt;span class=&quot;string&quot;&gt;&#39;iamcco/markdown-preview.vim&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;然后运行&lt;code&gt;:PluginInstall&lt;/code&gt;&lt;br&gt;稍等片刻左下角出现”Done”则说明markdown-preview安装成功&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/c28b7899jw1f5tvudj1klj20ou0fwaes.jpg&quot; alt=&quot;PluginInstall&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;使用和设置&quot;&gt;&lt;a href=&quot;#使用和设置&quot; class=&quot;headerlink&quot; title=&quot;使用和设置&quot;&gt;&lt;/a&gt;使用和设置&lt;/h4&gt;&lt;h5 id=&quot;命令&quot;&gt;&lt;a href=&quot;#命令&quot; class=&quot;headerlink&quot; title=&quot;命令&quot;&gt;&lt;/a&gt;命令&lt;/h5&gt;&lt;pre&gt;&lt;code&gt;MarkdownPreview
+&amp;quot; 在打开 markdown 文件后，使用该命令可以打开预览窗口
+MarkdownPreviewStop
+   &amp;quot; 关闭 markdown 预览窗口，并停止开启的服务进程
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&quot;修改配置文件&quot;&gt;&lt;a href=&quot;#修改配置文件&quot; class=&quot;headerlink&quot; title=&quot;修改配置文件&quot;&gt;&lt;/a&gt;修改配置文件&lt;/h5&gt;&lt;p&gt;&lt;code&gt;vim ~/.vim/bundle/markdown-preview.vim/plugin/mkdp.vim&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vth_to_chrome = &amp;quot;firefox &amp;amp;&amp;gt;log&amp;quot;
+&amp;quot; 设置 浏览器 的路径（或是启动 浏览器 的命令）
+
+let g:mkdp_auto_start = 1
+&amp;quot; 设置为 1 可以在打开 markdown 文件的时候自动打开浏览器预览，只在打开
+&amp;quot; markdown 文件的时候打开一次
+
+let g:mkdp_auto_open = 1
+&amp;quot; 设置为 1 在编辑 markdown 的时候检查预览窗口是否已经打开，否则自动打开预
+&amp;quot; 览窗口
+
+let g:mkdp_auto_close = 1
+&amp;quot; 在切换 buffer 的时候自动关闭预览窗口，设置为 0 则在切换 buffer 的时候不
+&amp;quot; 自动关闭预览窗口
+
+let g:mkdp_refresh_slow = 0
+&amp;quot; 设置为 1 则只有在保存文件，或退出插入模式的时候更新预览，默认为 0，实时
+&amp;quot; 更新预览
+
+let g:mkdp_command_for_global = 0
+&amp;quot; 设置为 1 则所有文件都可以使用 MarkdownPreview 进行预览，默认只有 markdown
+&amp;quot; 文件可以使用改命令im ~/.vimrc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/iamcco/markdown-preview.vim&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;详细信息&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      本文主要记录在使用vim用Markdown写博客时遇到的问题及解决方案
+    
+    </summary>
+    
+    
+      <category term="vim" scheme="http://itdog.cf/tags/vim/"/>
+    
+      <category term="Markdown" scheme="http://itdog.cf/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim配置和常用命令</title>
+    <link href="http://itdog.cf/2016/07/09/vim/"/>
+    <id>http://itdog.cf/2016/07/09/vim/</id>
+    <published>2016-07-09T15:19:46.000Z</published>
+    <updated>2016-07-14T14:03:31.299Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;1、vim基本配置&quot;&gt;&lt;a href=&quot;#1、vim基本配置&quot; class=&quot;headerlink&quot; title=&quot;1、vim基本配置&quot;&gt;&lt;/a&gt;1、vim基本配置&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;语法高亮&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;syntax on&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&quot;&lt;/span&gt;显示行号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; number&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;侦测文件类型&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;filetype on&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&quot;&lt;/span&gt; 不同文件设置不同缩进&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;filetype indent on&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&quot;&lt;/span&gt;文本格式和排版&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&quot;&lt;/span&gt;自动格式化&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; formatoptions=tcrqn&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;继承前一行的缩进方式&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;set autoindent&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&quot;&lt;/span&gt;为C程序提供自动缩进&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; smartindent&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;统一缩进为4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;set tabstop=4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;set shiftwidth=4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&quot;&lt;/span&gt;不要使用空格代替Tab&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; noexpandtab&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;不自动换行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;set nowrap&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&quot;&lt;/span&gt;行首段首自动缩进&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; smarttab&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;显示匹配的括号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;set showmatch&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&quot;&lt;/span&gt;修改保存后自动生成备份&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; has(&lt;span class=&quot;string&quot;&gt;&quot;vms&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; nobackup&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; backup&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;endif&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2、vim使用技巧&lt;/p&gt;
+&lt;p&gt;同时打开多个文件&lt;br&gt;:vsplit   左右分屏&lt;br&gt;:split 上下分屏&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      本文主要记录自己平常编程过程中使用vim的一些设置和命令等，记录的可能会有些乱，每隔一段时间会进行整理，方便自己遗忘时查阅。
+    
+    </summary>
+    
+    
+      <category term="vim" scheme="http://itdog.cf/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用github Page和hexo搭建个人静态博客</title>
+    <link href="http://itdog.cf/2016/07/06/creat_hexo_github_blog/"/>
+    <id>http://itdog.cf/2016/07/06/creat_hexo_github_blog/</id>
+    <published>2016-07-06T15:34:45.000Z</published>
+    <updated>2016-07-14T16:26:41.635Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;安装和配置git&quot;&gt;&lt;a href=&quot;#安装和配置git&quot; class=&quot;headerlink&quot; title=&quot;安装和配置git&quot;&gt;&lt;/a&gt;安装和配置git&lt;/h3&gt;&lt;p&gt;kali2.0默认安装有git，若没有安装，执行&lt;em&gt;sudo apt-get install git&lt;/em&gt;安装&lt;/p&gt;
 &lt;h4 id=&quot;1-检查ssh-key&quot;&gt;&lt;a href=&quot;#1-检查ssh-key&quot; class=&quot;headerlink&quot; title=&quot;1.检查ssh key&quot;&gt;&lt;/a&gt;1.检查ssh key&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; ~/.ssh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;如果显示“No such file or directory”，跳到第三步，否则继续。&lt;/p&gt;
 &lt;h4 id=&quot;2、备份和移除原来的ssh-key设置：&quot;&gt;&lt;a href=&quot;#2、备份和移除原来的ssh-key设置：&quot; class=&quot;headerlink&quot; title=&quot;2、备份和移除原来的ssh key设置：&quot;&gt;&lt;/a&gt;2、备份和移除原来的ssh key设置：&lt;/h4&gt;&lt;p&gt;因为已经存在key文件，所以需要备份旧的数据并删除：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ ls&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;config	id_rsa	id_rsa.pub	known_hosts&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ mkdir key_backup&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ cp id_rsa* key_backup&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ rm id_rsa*&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -44,8 +136,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;本文主要记录自己用hexo 和 github pages搭建这个博客的过程遇到的问题，对整个搭建过程不详细描述，使用的环境为kali2.0 64位。&lt;/p&gt;
-&lt;h3 id=&quot;安装和配置git&quot;&gt;&lt;a href=&quot;#安装和配置git&quot; class=&quot;headerlink&quot; t
+      本文主要记录自己用hexo 和 github pages搭建这个博客的过程遇到的问题，对整个搭建过程不详细描述，使用的环境为kali2.0 64位。
     
     </summary>
     
