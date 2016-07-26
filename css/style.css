@@ -2825,7 +2825,8 @@ color
   left: 217px;
   border: none;
   background-color: #ee6252;
-  top: 344px;
+/*top: 344px;*/
+  top: 254px;
   font-size: 14px;
   text-align: center;
   color: #fff;
@@ -2838,7 +2839,8 @@ color
   position: fixed;
   width: 256px;
   left: 0;
-  top: 360px;
+  top: 270px;
+/*top: 360px;*/
   color: #999;
   bottom: 0.7em;
   padding: 10px;

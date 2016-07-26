@@ -114,17 +114,18 @@
         <div id="switch-area" class="switch-area">
             <div class="switch-wrap">
                 <section class="switch-part switch-part1">
-                    <nav class="header-menu">
+                    <nav class="header-menu mytips-inner">
                         <ul>
                         
                             <li><a href="/">首页</a></li>
                         
-                            <li><a href="/works">文章</a></li>
-                        
-                            <li><a href="/about">About</a></li>
-                        
-                            <li><a href="/nav">导航</a></li>
-                        
+							 <li><a href="#">标签</a></li>
+                    	    
+                    	    <li><a href="#">友情链接</a></li>
+                    	    
+                    	    
+                    	    <li><a href="#">关于我</a></li>
+                    	    
                         </ul>
                     </nav>
                     <nav class="header-nav">
@@ -149,7 +150,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a>
+                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a>
                     </div>
                 </section>
                 
@@ -175,6 +176,7 @@
         </div>
     </header>                
 </div>
+
     </div>
     <div class="mid-col">
       <nav id="mobile-nav">
@@ -197,12 +199,6 @@
                 <ul>
                 
                     <li><a href="/">首页</a></li>
-                
-                    <li><a href="/works">文章</a></li>
-                
-                    <li><a href="/about">About</a></li>
-                
-                    <li><a href="/nav">导航</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -229,10 +225,69 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-Markdown" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-c&amp;c++中const的用法和区别" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/14/Markdown/" class="article-date">
+      <a href="/2016/07/26/c&c++中const的用法和区别/" class="article-date">
+      <time datetime="2016-07-26T14:13:23.000Z" itemprop="datePublished">2016-07-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/26/c&c++中const的用法和区别/">C&amp;C++中const的用法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="C语言中const的用法"><a href="#C语言中const的用法" class="headerlink" title="C语言中const的用法"></a>C语言中const的用法</h4><p>1、在C语言中<code>const</code>关键字比较霸道，被他修饰的变量的值不允许被改变（只读），即为“常量”；正因为如此在声明常量时必须赋给初值。<br>2、<code>const</code>功力深厚可以穿透类型。</p>
+<p> 只要把握好这两点就可以很好的掌握const的语义<br> 下面就这两条规则进行详细说明<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">/* const int 与 int const*/</span><br><span class="line"></span><br><span class="line">const int a = 10;</span><br><span class="line">int const a = 10;</span><br><span class="line">/*</span><br><span class="line"> * 上面这两条语句语义相同，都是限定整形a的值不允许不改变</span><br><span class="line"> * 语义相同 对应第二条const穿透类型定义“int”直接作用于“a”</span><br><span class="line"> * a值不允许改变对应第一条</span><br><span class="line"> */</span><br><span class="line">const int a = 10;//合法，声明时初始化</span><br><span class="line">a = 10;//试图修改常量a的值</span><br><span class="line">const int b;//这样也是可以的，但是b的值将是一个不确定的值并且无法改变</span><br><span class="line"></span><br><span class="line">/* 指向常量的指针*/</span><br><span class="line">const int *p;</span><br><span class="line">int const *p;</span><br><span class="line">/*</span><br><span class="line"> * 同样上面两条语句意思也是一样的 const修饰的是<span class="string">"*p"</span></span><br><span class="line"> * 这意味这*p的值无法改变，但是p的指向可以改变</span><br><span class="line"> * 因此我们可以在声明指针p的时候不赋给初值</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">const int a = 10;</span><br><span class="line">const int b = 20;</span><br><span class="line">const int *p;</span><br><span class="line">p = &amp;10;</span><br><span class="line">p = &amp;20;//合法,改变p的指向</span><br><span class="line">*p = 30;//非法，*p的值不允许被改变</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * p也可以指向变量</span><br><span class="line"> */</span><br><span class="line">int c = 10;</span><br><span class="line">p = &amp;c;</span><br><span class="line">c = 20;//合法，c为变量,*p的值也会改变（废话！）</span><br><span class="line">*p = 20;//非法，*p为常量</span><br><span class="line"></span><br><span class="line">/*这种特性在函数传参时非常有用*/</span><br><span class="line">void show(const int *p)</span><br><span class="line">/*show()是一个打印函数我们只希望他读取传进去的值(只读)，而不希望他拥有改变（只读）的权限*/</span><br><span class="line">show(&amp;c);</span><br><span class="line"></span><br><span class="line">/* 常指针 即指针本身为常量*/</span><br><span class="line">int* const p = &amp;a;//为常量，声明时赋值</span><br><span class="line">p = &amp;b;//非法，试图改变常量的值</span><br><span class="line"></span><br><span class="line">/*指向常量的常指针*/</span><br><span class="line">const int* const p = &amp;a;</span><br><span class="line">int const* const p1 = &amp;b;</span><br><span class="line"></span><br><span class="line">p = &amp;b;//错误，p为常指针</span><br><span class="line">*p = b;//错误，*p（p所指的值）为常量</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-vim安装Markdown实时预览插件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/14/vim安装Markdown实时预览插件/" class="article-date">
       <time datetime="2016-07-14T14:10:21.000Z" itemprop="datePublished">2016-07-14</time>
 </a>
     </div>
@@ -246,7 +301,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/14/Markdown/">Markdown使用技巧</a>
+      <a class="article-title" href="/2016/07/14/vim安装Markdown实时预览插件/">vim安装markdown实时预览工具</a>
     </h1>
   
 
@@ -256,7 +311,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              本文主要记录在使用vim用Markdown写博客时遇到的问题及解决方案
+              尽管MarkDown语法简答，但也不能排除有用错的时候，特别是刚开始使用的时候。难道要每次写完用hexo生成页面之后再改？没错，以前我就是这样干的。写了一篇我就忍不了了，于是搜了搜有没有实时预览的插件。有时候真是只有想不到没有做不到，markdown-preview,就是这样一款神器。
           
       
     </div>
@@ -272,7 +327,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/07/14/Markdown/#more">more >></a>
+          <a  href="/2016/07/14/vim安装Markdown实时预览插件/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -291,10 +346,10 @@
 
 
   
-    <article id="post-vim" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-vim配置和常用命令" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/09/vim/" class="article-date">
+      <a href="/2016/07/09/vim配置和常用命令/" class="article-date">
       <time datetime="2016-07-09T15:19:46.000Z" itemprop="datePublished">2016-07-09</time>
 </a>
     </div>
@@ -308,7 +363,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/09/vim/">vim配置和常用命令</a>
+      <a class="article-title" href="/2016/07/09/vim配置和常用命令/">vim配置和常用命令</a>
     </h1>
   
 
@@ -334,7 +389,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/07/09/vim/#more">more >></a>
+          <a  href="/2016/07/09/vim配置和常用命令/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -353,10 +408,10 @@
 
 
   
-    <article id="post-creat_hexo_github_blog" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-用hexo搭建github静态博客" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/06/creat_hexo_github_blog/" class="article-date">
+      <a href="/2016/07/06/用hexo搭建github静态博客/" class="article-date">
       <time datetime="2016-07-06T15:34:45.000Z" itemprop="datePublished">2016-07-06</time>
 </a>
     </div>
@@ -370,7 +425,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/06/creat_hexo_github_blog/">用github Page和hexo搭建个人静态博客</a>
+      <a class="article-title" href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a>
     </h1>
   
 
@@ -396,7 +451,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/07/06/creat_hexo_github_blog/#more">more >></a>
+          <a  href="/2016/07/06/用hexo搭建github静态博客/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

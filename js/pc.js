@@ -65,6 +65,10 @@ define([], function(){
         var timeout;
         var isEnterBtn = false;
         var isEnterTips = false;
+		$(".icon").bind("click",function(){
+		slide(0);
+		Tips.hide();
+		});
 
         $(".icon").bind("mouseenter", function(){
             isEnterBtn = true;
@@ -88,6 +92,12 @@ define([], function(){
                     Tips.hide();
                 }
             }, 100);
+        });
+
+		$(".mytips-inner li").bind("click", function(){
+            var idx = $(this).index();
+            slide(idx);
+            Tips.hide();
         });
 
         $(".tips-inner li").bind("click", function(){

@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Markdown使用技巧 | Chenjiangtao&#39;s Blog</title>
+  <title>C&amp;C++中const的用法 | Chenjiangtao&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文主要记录在使用vim用Markdown写博客时遇到的问题及解决方案">
+  <meta name="description" content="C语言中const的用法1、在C语言中const关键字比较霸道，被他修饰的变量的值不允许被改变（只读），即为“常量”；正因为如此在声明常量时必须赋给初值。2、const功力深厚可以穿透类型。
+ 只要把握好这两点就可以很好的掌握const的语义 下面就这两条规则进行详细说明1234567891011121314151617181920212223242526272829303132333435363">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown使用技巧">
-<meta property="og:url" content="http://itdog.cf/2016/07/14/Markdown/index.html">
+<meta property="og:title" content="C&C++中const的用法">
+<meta property="og:url" content="http://itdog.cf/2016/07/26/c&c++中const的用法和区别/index.html">
 <meta property="og:site_name" content="Chenjiangtao's Blog">
-<meta property="og:description" content="本文主要记录在使用vim用Markdown写博客时遇到的问题及解决方案">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/c28b7899jw1f5tvudj1klj20ou0fwaes.jpg">
-<meta property="og:updated_time" content="2016-07-14T16:30:39.031Z">
+<meta property="og:description" content="C语言中const的用法1、在C语言中const关键字比较霸道，被他修饰的变量的值不允许被改变（只读），即为“常量”；正因为如此在声明常量时必须赋给初值。2、const功力深厚可以穿透类型。
+ 只要把握好这两点就可以很好的掌握const的语义 下面就这两条规则进行详细说明1234567891011121314151617181920212223242526272829303132333435363">
+<meta property="og:updated_time" content="2016-07-26T16:16:03.050Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markdown使用技巧">
-<meta name="twitter:description" content="本文主要记录在使用vim用Markdown写博客时遇到的问题及解决方案">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c28b7899jw1f5tvudj1klj20ou0fwaes.jpg">
+<meta name="twitter:title" content="C&C++中const的用法">
+<meta name="twitter:description" content="C语言中const的用法1、在C语言中const关键字比较霸道，被他修饰的变量的值不允许被改变（只读），即为“常量”；正因为如此在声明常量时必须赋给初值。2、const功力深厚可以穿透类型。
+ 只要把握好这两点就可以很好的掌握const的语义 下面就这两条规则进行详细说明1234567891011121314151617181920212223242526272829303132333435363">
   
     <link rel="alternative" href="/atom.xml" title="Chenjiangtao&#39;s Blog" type="application/atom+xml">
   
@@ -110,17 +111,18 @@
         <div id="switch-area" class="switch-area">
             <div class="switch-wrap">
                 <section class="switch-part switch-part1">
-                    <nav class="header-menu">
+                    <nav class="header-menu mytips-inner">
                         <ul>
                         
                             <li><a href="/">首页</a></li>
                         
-                            <li><a href="/works">文章</a></li>
-                        
-                            <li><a href="/about">About</a></li>
-                        
-                            <li><a href="/nav">导航</a></li>
-                        
+							 <li><a href="#">标签</a></li>
+                    	    
+                    	    <li><a href="#">友情链接</a></li>
+                    	    
+                    	    
+                    	    <li><a href="#">关于我</a></li>
+                    	    
                         </ul>
                     </nav>
                     <nav class="header-nav">
@@ -145,7 +147,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a>
+                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a>
                     </div>
                 </section>
                 
@@ -171,6 +173,7 @@
         </div>
     </header>                
 </div>
+
     </div>
     <div class="mid-col">
       <nav id="mobile-nav">
@@ -193,12 +196,6 @@
                 <ul>
                 
                     <li><a href="/">首页</a></li>
-                
-                    <li><a href="/works">文章</a></li>
-                
-                    <li><a href="/about">About</a></li>
-                
-                    <li><a href="/nav">导航</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -223,11 +220,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Markdown" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-c&amp;c++中const的用法和区别" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/14/Markdown/" class="article-date">
-      <time datetime="2016-07-14T14:10:21.000Z" itemprop="datePublished">2016-07-14</time>
+      <a href="/2016/07/26/c&c++中const的用法和区别/" class="article-date">
+      <time datetime="2016-07-26T14:13:23.000Z" itemprop="datePublished">2016-07-26</time>
 </a>
     </div>
   
@@ -240,7 +237,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Markdown使用技巧
+      C&amp;C++中const的用法
     </h1>
   
 
@@ -251,7 +248,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c++</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -261,54 +258,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>MarkDown语法简答，易学<a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">详见</a></p>
-<h4 id="一、安装实时预览工具"><a href="#一、安装实时预览工具" class="headerlink" title="一、安装实时预览工具"></a>一、安装实时预览工具</h4><p>尽管MarkDown语法简答，但也不能排除有用错的时候，特别是刚开始使用的时候。难道要每次写完用hexo生成页面之后再改？没错，以前我就是这样干的。写了一篇我就忍不了了，于是搜了搜有没有实时预览的插件。有时候真是只有想不到没有做不到，markdown-preview,就是这样一款神器。</p>
-<h5 id="先简单介绍一下这个插件"><a href="#先简单介绍一下这个插件" class="headerlink" title="先简单介绍一下这个插件"></a>先简单介绍一下这个插件</h5><ol>
-<li>这是一款vim插件</li>
-<li>可以实时预览，你可以看到你敲的每一个字符的转换效果</li>
-<li>预览时随着你编辑的文件的滚动，生成的页面也会自己滚动</li>
-<li>可以设置用vim打开md文件时自动打开预览页面</li>
-</ol>
-<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>我们使用Vundle(一个Vim插件管理器)来安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  Git <span class="built_in">clone</span> https://github.com/gmarik/vundle.git  ~/.vim/bundle/vundle</span><br></pre></td></tr></table></figure></p>
-<p> 配置vimrc文件</p>
-<pre><code>插播一段 vimrc的存放位置：
-    系统 vimrc 文件: &quot;$VIM/vimrc&quot;
-    用户 vimrc 文件: &quot;$HOME/.vimrc&quot;
-    用户 exrc 文件: &quot;$HOME/.exrc&quot;
-    系统 gvimrc 文件: &quot;$VIM/gvimrc&quot;
-    用户 gvimrc 文件: &quot;$HOME/.gvimrc&quot;
-    系统菜单文件: &quot;$VIMRUNTIME/menu.vim&quot;
-    $VIM 预设值: &quot;/usr/share/vim&quot;
-</code></pre><p>配置不同地方的vimrc文件作用的范围也就不同。由于我们的vundle是安装在当前用户的目录下的，所以我们修改当前用户的vimrc配置文件即可，即只对当前用户有效。<br>打开配置文件<br>vim ~/.vimrc<br>添加如下信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> rtp+=~/.vim/bundle/vundle/  </span><br><span class="line">call vundle<span class="comment">#rc() </span></span><br><span class="line">Plugin <span class="string">'iamcco/markdown-preview.vim'</span></span><br></pre></td></tr></table></figure></p>
-<p>然后运行<code>:PluginInstall</code><br>稍等片刻左下角出现”Done”则说明markdown-preview安装成功<br><img src="http://ww1.sinaimg.cn/large/c28b7899jw1f5tvudj1klj20ou0fwaes.jpg" alt="PluginInstall"></p>
-<h4 id="使用和设置"><a href="#使用和设置" class="headerlink" title="使用和设置"></a>使用和设置</h4><h5 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h5><pre><code>MarkdownPreview
-&quot; 在打开 markdown 文件后，使用该命令可以打开预览窗口
-MarkdownPreviewStop
-   &quot; 关闭 markdown 预览窗口，并停止开启的服务进程
-</code></pre><h5 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h5><p><code>vim ~/.vim/bundle/markdown-preview.vim/plugin/mkdp.vim</code></p>
-<pre><code>vth_to_chrome = &quot;firefox &amp;&gt;log&quot;
-&quot; 设置 浏览器 的路径（或是启动 浏览器 的命令）
-
-let g:mkdp_auto_start = 1
-&quot; 设置为 1 可以在打开 markdown 文件的时候自动打开浏览器预览，只在打开
-&quot; markdown 文件的时候打开一次
-
-let g:mkdp_auto_open = 1
-&quot; 设置为 1 在编辑 markdown 的时候检查预览窗口是否已经打开，否则自动打开预
-&quot; 览窗口
-
-let g:mkdp_auto_close = 1
-&quot; 在切换 buffer 的时候自动关闭预览窗口，设置为 0 则在切换 buffer 的时候不
-&quot; 自动关闭预览窗口
-
-let g:mkdp_refresh_slow = 0
-&quot; 设置为 1 则只有在保存文件，或退出插入模式的时候更新预览，默认为 0，实时
-&quot; 更新预览
-
-let g:mkdp_command_for_global = 0
-&quot; 设置为 1 则所有文件都可以使用 MarkdownPreview 进行预览，默认只有 markdown
-&quot; 文件可以使用改命令im ~/.vimrc
-</code></pre><p><a href="https://github.com/iamcco/markdown-preview.vim" target="_blank" rel="external">详细信息</a></p>
+        <h4 id="C语言中const的用法"><a href="#C语言中const的用法" class="headerlink" title="C语言中const的用法"></a>C语言中const的用法</h4><p>1、在C语言中<code>const</code>关键字比较霸道，被他修饰的变量的值不允许被改变（只读），即为“常量”；正因为如此在声明常量时必须赋给初值。<br>2、<code>const</code>功力深厚可以穿透类型。</p>
+<p> 只要把握好这两点就可以很好的掌握const的语义<br> 下面就这两条规则进行详细说明<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">/* const int 与 int const*/</span><br><span class="line"></span><br><span class="line">const int a = 10;</span><br><span class="line">int const a = 10;</span><br><span class="line">/*</span><br><span class="line"> * 上面这两条语句语义相同，都是限定整形a的值不允许不改变</span><br><span class="line"> * 语义相同 对应第二条const穿透类型定义“int”直接作用于“a”</span><br><span class="line"> * a值不允许改变对应第一条</span><br><span class="line"> */</span><br><span class="line">const int a = 10;//合法，声明时初始化</span><br><span class="line">a = 10;//试图修改常量a的值</span><br><span class="line">const int b;//这样也是可以的，但是b的值将是一个不确定的值并且无法改变</span><br><span class="line"></span><br><span class="line">/* 指向常量的指针*/</span><br><span class="line">const int *p;</span><br><span class="line">int const *p;</span><br><span class="line">/*</span><br><span class="line"> * 同样上面两条语句意思也是一样的 const修饰的是<span class="string">"*p"</span></span><br><span class="line"> * 这意味这*p的值无法改变，但是p的指向可以改变</span><br><span class="line"> * 因此我们可以在声明指针p的时候不赋给初值</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">const int a = 10;</span><br><span class="line">const int b = 20;</span><br><span class="line">const int *p;</span><br><span class="line">p = &amp;10;</span><br><span class="line">p = &amp;20;//合法,改变p的指向</span><br><span class="line">*p = 30;//非法，*p的值不允许被改变</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * p也可以指向变量</span><br><span class="line"> */</span><br><span class="line">int c = 10;</span><br><span class="line">p = &amp;c;</span><br><span class="line">c = 20;//合法，c为变量,*p的值也会改变（废话！）</span><br><span class="line">*p = 20;//非法，*p为常量</span><br><span class="line"></span><br><span class="line">/*这种特性在函数传参时非常有用*/</span><br><span class="line">void show(const int *p)</span><br><span class="line">/*show()是一个打印函数我们只希望他读取传进去的值(只读)，而不希望他拥有改变（只读）的权限*/</span><br><span class="line">show(&amp;c);</span><br><span class="line"></span><br><span class="line">/* 常指针 即指针本身为常量*/</span><br><span class="line">int* const p = &amp;a;//为常量，声明时赋值</span><br><span class="line">p = &amp;b;//非法，试图改变常量的值</span><br><span class="line"></span><br><span class="line">/*指向常量的常指针*/</span><br><span class="line">const int* const p = &amp;a;</span><br><span class="line">int const* const p1 = &amp;b;</span><br><span class="line"></span><br><span class="line">p = &amp;b;//错误，p为常指针</span><br><span class="line">*p = b;//错误，*p（p所指的值）为常量</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -317,13 +268,13 @@ let g:mkdp_command_for_global = 0
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/07/14/Markdown/">Markdown使用技巧</a></p>
+        <p><span>本文标题:</span><a href="/2016/07/26/c&c++中const的用法和区别/">C&amp;C++中const的用法</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 chenjiangtao 的个人博客">chenjiangtao</a></p>
-        <p><span>发布时间:</span>2016年07月14日 - 22时10分</p>
-        <p><span>最后更新:</span>2016年07月15日 - 00时30分</p>
+        <p><span>发布时间:</span>2016年07月26日 - 22时13分</p>
+        <p><span>最后更新:</span>2016年07月27日 - 00时16分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/07/14/Markdown/" title="Markdown使用技巧">http://itdog.cf/2016/07/14/Markdown/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://itdog.cf/2016/07/14/Markdown/　　作者: chenjiangtao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/07/26/c&c++中const的用法和区别/" title="C&amp;C++中const的用法">http://itdog.cf/2016/07/26/c&amp;c++中const的用法和区别/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://itdog.cf/2016/07/26/c&amp;c++中const的用法和区别/　　作者: chenjiangtao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -337,8 +288,8 @@ let g:mkdp_command_for_global = 0
 <nav id="article-nav">
   
   
-    <a href="/2016/07/09/vim/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vim配置和常用命令</div>
+    <a href="/2016/07/14/vim安装Markdown实时预览插件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vim安装markdown实时预览工具</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -349,7 +300,7 @@ let g:mkdp_command_for_global = 0
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#语法"><span class="toc-number">1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一、安装实时预览工具"><span class="toc-number">2.</span> <span class="toc-text">一、安装实时预览工具</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#先简单介绍一下这个插件"><span class="toc-number">2.1.</span> <span class="toc-text">先简单介绍一下这个插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装"><span class="toc-number">2.2.</span> <span class="toc-text">安装</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用和设置"><span class="toc-number">3.</span> <span class="toc-text">使用和设置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#命令"><span class="toc-number">3.1.</span> <span class="toc-text">命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改配置文件"><span class="toc-number">3.2.</span> <span class="toc-text">修改配置文件</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#C语言中const的用法"><span class="toc-number">1.</span> <span class="toc-text">C语言中const的用法</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -397,7 +348,7 @@ let g:mkdp_command_for_global = 0
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/07/14/Markdown/" data-title="Markdown使用技巧" data-url="http://itdog.cf/2016/07/14/Markdown/"></div>
+    <div class="ds-thread" data-thread-key="2016/07/26/c&amp;c++中const的用法和区别/" data-title="C&amp;C++中const的用法" data-url="http://itdog.cf/2016/07/26/c&amp;c++中const的用法和区别/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -424,12 +375,12 @@ let g:mkdp_command_for_global = 0
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/07/09/vim/" title="下一篇: vim配置和常用命令">
+            <a href="/2016/07/14/vim安装Markdown实时预览插件/" title="下一篇: vim安装markdown实时预览工具">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/Markdown/">Markdown使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/vim/">vim配置和常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/creat_hexo_github_blog/">用github Page和hexo搭建个人静态博客</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/26/c&c++中const的用法和区别/">C&C++中const的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/vim安装Markdown实时预览插件/">vim安装markdown实时预览工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/vim配置和常用命令/">vim配置和常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
