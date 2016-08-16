@@ -150,7 +150,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a>
+                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python,</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a>
                     </div>
                 </section>
                 
@@ -224,6 +224,141 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-用Python爬取教务系统成绩" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/16/用Python爬取教务系统成绩/" class="article-date">
+      <time datetime="2016-08-16T14:27:56.000Z" itemprop="datePublished">2016-08-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/16/用Python爬取教务系统成绩/">用Python爬取教务系统成绩</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>本文主要参考:<a href="http://www.w2bc.com/article/39034" target="_blank" rel="external">python爬虫实战之模拟正方教务系统登录查询成绩</a></p>
+<p>每次查成绩都要手动登录去查，最近在学Python,就想着用Python写一个脚本自己获取成绩，由于学校用的是方正教务系统，于是随手搜了一下有现成的，但是并不能直接用，经过摸索修改终于可以了。先看看效果<br><img src="http://ww3.sinaimg.cn/large/c28b7899jw1f6vz3stsdhj20gl0fi0wj.jpg" alt="查成绩"><br>好吧，暴露了我的学渣属性……</p>
+<p>我们学校教务系统总共采取了三种措施来认证访问的合法性：<br>    1,随机的Hash值<br>    2,随机的Viewstate值<br>    3,Referer值<br>第二条在我们参考的那篇文章中已经解决。</p>
+<p>我们学校在登录上做了一丢丢手脚，去掉了Cookies，但是第一次访问登录页面时会返回一个随机的Hash值，并且这个Hash值会一直伴随着本次登录，直到用户退出。</p>
+<p><img src="http://ww1.sinaimg.cn/large/c28b7899jw1f6vznxelvfj20eu03a3yz.jpg" alt="Hash"></p>
+<p>也就是当我们访问<a href="http://202.200.112.200" target="_blank" rel="external">http://202.200.112.200</a> 时它会跳转到一个“不确定”的页面，其实只要获取这个Hash值就可以了，按F12看看</p>
+<p><img src="http://ww2.sinaimg.cn/large/c28b7899jw1f6w01b4wwdj20wl0ghagd.jpg" alt="302跳转"><br>果真做了一次302跳转,我们只要从返回的headers中获取这串Hash码就行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import request</span><br><span class="line">url = &apos;http://202.200.112.200/default6.aspx&apos;</span><br><span class="line">headers = requests.head(url).headers</span><br><span class="line">val = headers[&apos;location&apos;]</span><br><span class="line">return val[:28]</span><br></pre></td></tr></table></figure>
+<p>以后只要在url中添上这串字符就可以了。</p>
+<p>至此终于可以登录进去系统了，但是在访问查询成绩的页面时又碰到了钉子，再F12看看，<br><img src="http://ww2.sinaimg.cn/large/c28b7899jw1f6w0n2u7aij20er0fctcn.jpg" alt="Referer"><br>发现Headers中多了个个Referer属性，这个值是记录你上次访问的页面地址，也就是你从那个页面跳转到这个页面的，要是不符合规则就会访问失败，因此在每次访问时要在Headers中更新Referer信息。<br>完整代码：<a href="https://github.com/chmoyan/ScoreSpider/blob/master/ScoreSpider.py" target="_blank" rel="external">ScoreSpider.py</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python,</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-vim自动补全插件YouCompleteMe安装" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/07/vim自动补全插件YouCompleteMe安装/" class="article-date">
+      <time datetime="2016-08-06T16:14:11.000Z" itemprop="datePublished">2016-08-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/07/vim自动补全插件YouCompleteMe安装/">vim自动补全插件YouCompleteMe安装</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="YouCompleteMe简介"><a href="#YouCompleteMe简介" class="headerlink" title="YouCompleteMe简介"></a>YouCompleteMe简介</h4><p>YCM基于语义引擎（比如C家族的libclang）提供了语义补全，是通过分析源文件，经过语法分析之后进行补全。对于C家族的语言这种基于语义的自动补全依赖于clang/llvm，其他语言 ,会调用vim设置的omnifunc来匹配，详细信息可以查看<a href="https://github.com/Valloric/YouCompleteMe" target="_blank" rel="external">github</a></p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>使用Vundle来安装<a href="http://itdog.cf/2016/07/14/vim%E5%AE%89%E8%A3%85Markdown%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88%E6%8F%92%E4%BB%B6/#%E5%AE%89%E8%A3%85">没安装Vundle的戳这里</a><br>安装好Vunle后在vimrc文件中添加<code>Pluing &#39;Valloric/YouCompleteMe&#39;</code>,执行<code>PlugingInstall</code>安装，要下载的文件较多，请耐心等待。<br>由于使用的是kali和ubuntu属于同系系统，可采用ubuntu系统的安装方式。<br>执行下面步骤前请确保</p>
+<ol>
+<li>你的vim版本在7.3.598以上并且支持python2或python3</li>
+<li>安装了cmake和python-dev,若没有安装，执行<code>sudo apt-get install build-essential cmake</code>,<code>sudo apt-get install python-dev python3-dev</code>。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.vim/bundle/YouCompleteMe</span><br><span class="line">sudo ./install.py</span><br></pre></td></tr></table></figure>
+<p>希望支持c族语言则<code>./install.py --clang-completer</code>；<br>C# :<code>./install.py --omnisharp-completer</code>;<br>JavaScript: <code>./install.py --tern-completer</code>;<br>如果安装过程中出错尝试使用root权限安装。</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>打开默认的配置文件<br><code>vim ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py</code><br>在flags[ * ]数组的后面添加你想要的路径，例如: stdio.h等Ｃ语言的头文件包含在/usr/include中，那么您需要添加这样一条<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># c语言</span><br><span class="line">&apos;-isystem&apos;,</span><br><span class="line">&apos;/usr/include&apos;,</span><br><span class="line"># c++</span><br><span class="line">&apos;-isystem&apos;,</span><br><span class="line">&apos;/usr/include/c++/5.3.1&apos;,</span><br></pre></td></tr></table></figure></p>
+<p>注释掉下面这4行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># try:</span><br><span class="line"># final_flags.remove( &apos;-stdlib=libc++&apos; )</span><br><span class="line"># except ValueError:</span><br><span class="line"># pass</span><br></pre></td></tr></table></figure></p>
+<p>接下来打开 ~/ 下的.vimrc文件添加<code>let g:ycm_global_ycm_extra_conf = &#39;~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py&#39;</code>即指定默认配置文件路径。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-c&amp;c++中const的用法和区别" class="article article-type-post" itemscope itemprop="blogPost">
   

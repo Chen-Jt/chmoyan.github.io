@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itdog.cf/"/>
-  <updated>2016-07-26T16:16:03.050Z</updated>
+  <updated>2016-08-16T16:59:17.018Z</updated>
   <id>http://itdog.cf/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用Python爬取教务系统成绩</title>
+    <link href="http://itdog.cf/2016/08/16/%E7%94%A8Python%E7%88%AC%E5%8F%96%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E6%88%90%E7%BB%A9/"/>
+    <id>http://itdog.cf/2016/08/16/用Python爬取教务系统成绩/</id>
+    <published>2016-08-16T14:27:56.000Z</published>
+    <updated>2016-08-16T16:59:17.018Z</updated>
+    
+    <content type="html">&lt;p&gt;本文主要参考:&lt;a href=&quot;http://www.w2bc.com/article/39034&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;python爬虫实战之模拟正方教务系统登录查询成绩&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;每次查成绩都要手动登录去查，最近在学Python,就想着用Python写一个脚本自己获取成绩，由于学校用的是方正教务系统，于是随手搜了一下有现成的，但是并不能直接用，经过摸索修改终于可以了。先看看效果&lt;br&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/c28b7899jw1f6vz3stsdhj20gl0fi0wj.jpg&quot; alt=&quot;查成绩&quot;&gt;&lt;br&gt;好吧，暴露了我的学渣属性……&lt;/p&gt;
+&lt;p&gt;我们学校教务系统总共采取了三种措施来认证访问的合法性：&lt;br&gt;    1,随机的Hash值&lt;br&gt;    2,随机的Viewstate值&lt;br&gt;    3,Referer值&lt;br&gt;第二条在我们参考的那篇文章中已经解决。&lt;/p&gt;
+&lt;p&gt;我们学校在登录上做了一丢丢手脚，去掉了Cookies，但是第一次访问登录页面时会返回一个随机的Hash值，并且这个Hash值会一直伴随着本次登录，直到用户退出。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/c28b7899jw1f6vznxelvfj20eu03a3yz.jpg&quot; alt=&quot;Hash&quot;&gt;&lt;/p&gt;
+&lt;p&gt;也就是当我们访问&lt;a href=&quot;http://202.200.112.200&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://202.200.112.200&lt;/a&gt; 时它会跳转到一个“不确定”的页面，其实只要获取这个Hash值就可以了，按F12看看&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/c28b7899jw1f6w01b4wwdj20wl0ghagd.jpg&quot; alt=&quot;302跳转&quot;&gt;&lt;br&gt;果真做了一次302跳转,我们只要从返回的headers中获取这串Hash码就行&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import request&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url = &amp;apos;http://202.200.112.200/default6.aspx&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;headers = requests.head(url).headers&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;val = headers[&amp;apos;location&amp;apos;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;return val[:28]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;以后只要在url中添上这串字符就可以了。&lt;/p&gt;
+&lt;p&gt;至此终于可以登录进去系统了，但是在访问查询成绩的页面时又碰到了钉子，再F12看看，&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/c28b7899jw1f6w0n2u7aij20er0fctcn.jpg&quot; alt=&quot;Referer&quot;&gt;&lt;br&gt;发现Headers中多了个个Referer属性，这个值是记录你上次访问的页面地址，也就是你从那个页面跳转到这个页面的，要是不符合规则就会访问失败，因此在每次访问时要在Headers中更新Referer信息。&lt;br&gt;完整代码：&lt;a href=&quot;https://github.com/chmoyan/ScoreSpider/blob/master/ScoreSpider.py&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ScoreSpider.py&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文主要参考:&lt;a href=&quot;http://www.w2bc.com/article/39034&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;python爬虫实战之模拟正方教务系统登录查询成绩&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;每次查成绩都要手动登录去查，最近在学
+    
+    </summary>
+    
+    
+      <category term="Python," scheme="http://itdog.cf/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim自动补全插件YouCompleteMe安装</title>
+    <link href="http://itdog.cf/2016/08/07/vim%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E6%8F%92%E4%BB%B6YouCompleteMe%E5%AE%89%E8%A3%85/"/>
+    <id>http://itdog.cf/2016/08/07/vim自动补全插件YouCompleteMe安装/</id>
+    <published>2016-08-06T16:14:11.000Z</published>
+    <updated>2016-08-16T14:50:38.907Z</updated>
+    
+    <content type="html">&lt;h4 id=&quot;YouCompleteMe简介&quot;&gt;&lt;a href=&quot;#YouCompleteMe简介&quot; class=&quot;headerlink&quot; title=&quot;YouCompleteMe简介&quot;&gt;&lt;/a&gt;YouCompleteMe简介&lt;/h4&gt;&lt;p&gt;YCM基于语义引擎（比如C家族的libclang）提供了语义补全，是通过分析源文件，经过语法分析之后进行补全。对于C家族的语言这种基于语义的自动补全依赖于clang/llvm，其他语言 ,会调用vim设置的omnifunc来匹配，详细信息可以查看&lt;a href=&quot;https://github.com/Valloric/YouCompleteMe&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;p&gt;使用Vundle来安装&lt;a href=&quot;http://itdog.cf/2016/07/14/vim%E5%AE%89%E8%A3%85Markdown%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88%E6%8F%92%E4%BB%B6/#%E5%AE%89%E8%A3%85&quot;&gt;没安装Vundle的戳这里&lt;/a&gt;&lt;br&gt;安装好Vunle后在vimrc文件中添加&lt;code&gt;Pluing &amp;#39;Valloric/YouCompleteMe&amp;#39;&lt;/code&gt;,执行&lt;code&gt;PlugingInstall&lt;/code&gt;安装，要下载的文件较多，请耐心等待。&lt;br&gt;由于使用的是kali和ubuntu属于同系系统，可采用ubuntu系统的安装方式。&lt;br&gt;执行下面步骤前请确保&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;你的vim版本在7.3.598以上并且支持python2或python3&lt;/li&gt;
+&lt;li&gt;安装了cmake和python-dev,若没有安装，执行&lt;code&gt;sudo apt-get install build-essential cmake&lt;/code&gt;,&lt;code&gt;sudo apt-get install python-dev python3-dev&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd ~/.vim/bundle/YouCompleteMe&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo ./install.py&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;希望支持c族语言则&lt;code&gt;./install.py --clang-completer&lt;/code&gt;；&lt;br&gt;C# :&lt;code&gt;./install.py --omnisharp-completer&lt;/code&gt;;&lt;br&gt;JavaScript: &lt;code&gt;./install.py --tern-completer&lt;/code&gt;;&lt;br&gt;如果安装过程中出错尝试使用root权限安装。&lt;/p&gt;
+&lt;h4 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h4&gt;&lt;p&gt;打开默认的配置文件&lt;br&gt;&lt;code&gt;vim ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py&lt;/code&gt;&lt;br&gt;在flags[ * ]数组的后面添加你想要的路径，例如: stdio.h等Ｃ语言的头文件包含在/usr/include中，那么您需要添加这样一条&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# c语言&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;apos;-isystem&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;apos;/usr/include&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# c++&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;apos;-isystem&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;apos;/usr/include/c++/5.3.1&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;注释掉下面这4行&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# try:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# final_flags.remove( &amp;apos;-stdlib=libc++&amp;apos; )&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# except ValueError:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# pass&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;接下来打开 ~/ 下的.vimrc文件添加&lt;code&gt;let g:ycm_global_ycm_extra_conf = &amp;#39;~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py&amp;#39;&lt;/code&gt;即指定默认配置文件路径。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;YouCompleteMe简介&quot;&gt;&lt;a href=&quot;#YouCompleteMe简介&quot; class=&quot;headerlink&quot; title=&quot;YouCompleteMe简介&quot;&gt;&lt;/a&gt;YouCompleteMe简介&lt;/h4&gt;&lt;p&gt;YCM基于语义引擎（比如C家族的li
+    
+    </summary>
+    
+    
+      <category term="vim" scheme="http://itdog.cf/tags/vim/"/>
+    
+  </entry>
   
   <entry>
     <title>C&amp;C++中const的用法</title>
@@ -102,9 +164,9 @@ let g:mkdp_command_for_global = 0
     </summary>
     
     
-      <category term="Markdown" scheme="http://itdog.cf/tags/Markdown/"/>
-    
       <category term="vim" scheme="http://itdog.cf/tags/vim/"/>
+    
+      <category term="Markdown" scheme="http://itdog.cf/tags/Markdown/"/>
     
   </entry>
   

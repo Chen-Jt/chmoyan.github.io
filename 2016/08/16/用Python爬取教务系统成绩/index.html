@@ -3,21 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>用github Page和hexo搭建个人静态博客 | Chenjiangtao&#39;s Blog</title>
+  <title>用Python爬取教务系统成绩 | Chenjiangtao&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文主要记录自己用hexo 和 github pages搭建这个博客的过程遇到的问题，对整个搭建过程不详细描述，使用的环境为kali2.0 64位。">
+  <meta name="description" content="本文主要参考:python爬虫实战之模拟正方教务系统登录查询成绩
+每次查成绩都要手动登录去查，最近在学Python,就想着用Python写一个脚本自己获取成绩，由于学校用的是方正教务系统，于是随手搜了一下有现成的，但是并不能直接用，经过摸索修改终于可以了。先看看效果好吧，暴露了我的学渣属性……
+我们学校教务系统总共采取了三种措施来认证访问的合法性：    1,随机的Hash值    2,随机的Vi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用github Page和hexo搭建个人静态博客">
-<meta property="og:url" content="http://itdog.cf/2016/07/06/用hexo搭建github静态博客/index.html">
+<meta property="og:title" content="用Python爬取教务系统成绩">
+<meta property="og:url" content="http://itdog.cf/2016/08/16/用Python爬取教务系统成绩/index.html">
 <meta property="og:site_name" content="Chenjiangtao's Blog">
-<meta property="og:description" content="本文主要记录自己用hexo 和 github pages搭建这个博客的过程遇到的问题，对整个搭建过程不详细描述，使用的环境为kali2.0 64位。">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/c28b7899jw1f5a7vru74dj20fp02rq3r.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/c28b7899jw1f5a8j03huvj20hb0a9tbu.jpg">
-<meta property="og:updated_time" content="2016-07-14T16:26:41.635Z">
+<meta property="og:description" content="本文主要参考:python爬虫实战之模拟正方教务系统登录查询成绩
+每次查成绩都要手动登录去查，最近在学Python,就想着用Python写一个脚本自己获取成绩，由于学校用的是方正教务系统，于是随手搜了一下有现成的，但是并不能直接用，经过摸索修改终于可以了。先看看效果好吧，暴露了我的学渣属性……
+我们学校教务系统总共采取了三种措施来认证访问的合法性：    1,随机的Hash值    2,随机的Vi">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/c28b7899jw1f6vz3stsdhj20gl0fi0wj.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c28b7899jw1f6vznxelvfj20eu03a3yz.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/c28b7899jw1f6w01b4wwdj20wl0ghagd.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/c28b7899jw1f6w0n2u7aij20er0fctcn.jpg">
+<meta property="og:updated_time" content="2016-08-16T16:59:17.018Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用github Page和hexo搭建个人静态博客">
-<meta name="twitter:description" content="本文主要记录自己用hexo 和 github pages搭建这个博客的过程遇到的问题，对整个搭建过程不详细描述，使用的环境为kali2.0 64位。">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c28b7899jw1f5a7vru74dj20fp02rq3r.jpg">
+<meta name="twitter:title" content="用Python爬取教务系统成绩">
+<meta name="twitter:description" content="本文主要参考:python爬虫实战之模拟正方教务系统登录查询成绩
+每次查成绩都要手动登录去查，最近在学Python,就想着用Python写一个脚本自己获取成绩，由于学校用的是方正教务系统，于是随手搜了一下有现成的，但是并不能直接用，经过摸索修改终于可以了。先看看效果好吧，暴露了我的学渣属性……
+我们学校教务系统总共采取了三种措施来认证访问的合法性：    1,随机的Hash值    2,随机的Vi">
+<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/c28b7899jw1f6vz3stsdhj20gl0fi0wj.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Chenjiangtao&#39;s Blog" type="application/atom+xml">
   
@@ -220,11 +228,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-用hexo搭建github静态博客" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-用Python爬取教务系统成绩" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/06/用hexo搭建github静态博客/" class="article-date">
-      <time datetime="2016-07-06T15:34:45.000Z" itemprop="datePublished">2016-07-06</time>
+      <a href="/2016/08/16/用Python爬取教务系统成绩/" class="article-date">
+      <time datetime="2016-08-16T14:27:56.000Z" itemprop="datePublished">2016-08-16</time>
 </a>
     </div>
   
@@ -237,7 +245,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      用github Page和hexo搭建个人静态博客
+      用Python爬取教务系统成绩
     </h1>
   
 
@@ -248,7 +256,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python,</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -258,23 +266,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="安装和配置git"><a href="#安装和配置git" class="headerlink" title="安装和配置git"></a>安装和配置git</h3><p>kali2.0默认安装有git，若没有安装，执行<em>sudo apt-get install git</em>安装</p>
-<h4 id="1-检查ssh-key"><a href="#1-检查ssh-key" class="headerlink" title="1.检查ssh key"></a>1.检查ssh key</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
-<p>如果显示“No such file or directory”，跳到第三步，否则继续。</p>
-<h4 id="2、备份和移除原来的ssh-key设置："><a href="#2、备份和移除原来的ssh-key设置：" class="headerlink" title="2、备份和移除原来的ssh key设置："></a>2、备份和移除原来的ssh key设置：</h4><p>因为已经存在key文件，所以需要备份旧的数据并删除：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">config	id_rsa	id_rsa.pub	known_hosts</span><br><span class="line">$ mkdir key_backup</span><br><span class="line">$ cp id_rsa* key_backup</span><br><span class="line">$ rm id_rsa*</span><br></pre></td></tr></table></figure></p>
-<h4 id="3、生成新的SSH-Key："><a href="#3、生成新的SSH-Key：" class="headerlink" title="3、生成新的SSH Key："></a>3、生成新的SSH Key：</h4><p>输入下面的代码，就可以生成新的key文件,这里全部保持默认按三次回车就行，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="4、添加SSH-Key到GitHub"><a href="#4、添加SSH-Key到GitHub" class="headerlink" title="4、添加SSH Key到GitHub"></a>4、添加SSH Key到GitHub</h4><p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置、这样以后用本用户同步文章就不需要输入密码了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id\_rsa.pub</span><br><span class="line">将输出到终端的内容手动复制下来。这里不用vim打开的原因是，vim会自动增加换行符从而产生错误。</span><br><span class="line">登陆github系统。点击右上角的 头像-&gt; Settings—&gt; SSH and GPG keys —&gt; New SSH  keys</span><br><span class="line">把你本地生成的密钥复制到里面（key文本框中）， 点击 add key </span><br><span class="line">测试</span><br><span class="line">可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</span><br><span class="line"></span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line"></span><br><span class="line">如果是下面的反馈：</span><br><span class="line"></span><br><span class="line">The authenticity of host <span class="string">'github.com (207.97.227.239)'</span> can<span class="string">'t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br><span class="line">不要紧张，输入yes就好，然后会看到：</span><br><span class="line"></span><br><span class="line">Hi cnfeat! You'</span>ve successfully authenticated, </span><br><span class="line">but GitHub does not provide shell access.</span><br><span class="line"></span><br><span class="line">设置用户信息：</span><br><span class="line">现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。</span><br><span class="line">Git会根据用户的名字和邮箱来记录提交。</span><br><span class="line">GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的。</span><br><span class="line">$ git config --global user.name <span class="string">"cnfeat"</span>//用户名</span><br><span class="line">$ git config --global user.email <span class="string">"cnfeat@gmail.com"</span>//填写自己的邮箱</span><br><span class="line"></span><br><span class="line">SSH Key配置成功，本机已成功连接到github。</span><br></pre></td></tr></table></figure></p>
-<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><p>进入<a href="https://nodejs.org/en/" target="_blank" rel="external">nodejs官网</a>下载最新版安装包。<br>这里下载的是编译好的二进制文件，进入下载目录解压并拷贝到相应系统目录就行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$tar</span> -xf node-v4.4.6-linux-x64.tar.xz </span><br><span class="line"><span class="variable">$cd</span> node-v4.4.6-linux-x64</span><br><span class="line"><span class="variable">$sudo</span> cp bin/* /usr/bin/</span><br><span class="line"><span class="variable">$node</span> -v</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://ww1.sinaimg.cn/large/c28b7899jw1f5a7vru74dj20fp02rq3r.jpg" alt="安装nodejs"><br>参考: <a href="http://http://www.xitongzhijia.net/xtjc/20150202/36680.html" target="_blank" rel="external">Linux安装Nodejs的三大方法</a></p>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>nodejs 安装好后就可以安装hexo了，安装过程中会有警告出现，但是并不影响使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> npm install hexo-cli -g</span><br><span class="line"><span class="variable">$sudo</span> npm install hexo --save</span><br><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
-<p>安装成功会有如下信息<br><img src="http://ww4.sinaimg.cn/large/c28b7899jw1f5a8j03huvj20hb0a9tbu.jpg" alt="安装hexo"></p>
-<h4 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h4><p>在你的用户home目录下新建一个hexo目录,这个目录将是hexo的工作目录，名字可以随便起<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/</span><br><span class="line">$ mkdir hexo</span><br><span class="line"><span class="variable">$cd</span> hexo</span><br><span class="line"><span class="variable">$hexo</span> init</span><br><span class="line"><span class="variable">$sudo</span> npm install</span><br></pre></td></tr></table></figure></p>
-<p>第一次使用hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
-<p>接着会有提示<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure></p>
-<p>在浏览器中打开<a href="http://localhost:4000/即可看见生成的博客。" target="_blank" rel="external">http://localhost:4000/即可看见生成的博客。</a></p>
-<h3 id="将博客同步到github"><a href="#将博客同步到github" class="headerlink" title="将博客同步到github"></a>将博客同步到github</h3><p>还是在刚才创建的那个目录下面，在_config.yml文件中，找到Deployment，然后按照如下修改yourname为你的github用户名。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></p>
-<p>修改完成后执行<em>sudo npm install hexo-deployer-git –save</em>来安装所需的插件<br>接下来执行 hexo d 即可同步到github，超级方便有木有！<br>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>本文主要参考:<a href="http://www.w2bc.com/article/39034" target="_blank" rel="external">python爬虫实战之模拟正方教务系统登录查询成绩</a></p>
+<p>每次查成绩都要手动登录去查，最近在学Python,就想着用Python写一个脚本自己获取成绩，由于学校用的是方正教务系统，于是随手搜了一下有现成的，但是并不能直接用，经过摸索修改终于可以了。先看看效果<br><img src="http://ww3.sinaimg.cn/large/c28b7899jw1f6vz3stsdhj20gl0fi0wj.jpg" alt="查成绩"><br>好吧，暴露了我的学渣属性……</p>
+<p>我们学校教务系统总共采取了三种措施来认证访问的合法性：<br>    1,随机的Hash值<br>    2,随机的Viewstate值<br>    3,Referer值<br>第二条在我们参考的那篇文章中已经解决。</p>
+<p>我们学校在登录上做了一丢丢手脚，去掉了Cookies，但是第一次访问登录页面时会返回一个随机的Hash值，并且这个Hash值会一直伴随着本次登录，直到用户退出。</p>
+<p><img src="http://ww1.sinaimg.cn/large/c28b7899jw1f6vznxelvfj20eu03a3yz.jpg" alt="Hash"></p>
+<p>也就是当我们访问<a href="http://202.200.112.200" target="_blank" rel="external">http://202.200.112.200</a> 时它会跳转到一个“不确定”的页面，其实只要获取这个Hash值就可以了，按F12看看</p>
+<p><img src="http://ww2.sinaimg.cn/large/c28b7899jw1f6w01b4wwdj20wl0ghagd.jpg" alt="302跳转"><br>果真做了一次302跳转,我们只要从返回的headers中获取这串Hash码就行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import request</span><br><span class="line">url = &apos;http://202.200.112.200/default6.aspx&apos;</span><br><span class="line">headers = requests.head(url).headers</span><br><span class="line">val = headers[&apos;location&apos;]</span><br><span class="line">return val[:28]</span><br></pre></td></tr></table></figure>
+<p>以后只要在url中添上这串字符就可以了。</p>
+<p>至此终于可以登录进去系统了，但是在访问查询成绩的页面时又碰到了钉子，再F12看看，<br><img src="http://ww2.sinaimg.cn/large/c28b7899jw1f6w0n2u7aij20er0fctcn.jpg" alt="Referer"><br>发现Headers中多了个个Referer属性，这个值是记录你上次访问的页面地址，也就是你从那个页面跳转到这个页面的，要是不符合规则就会访问失败，因此在每次访问时要在Headers中更新Referer信息。<br>完整代码：<a href="https://github.com/chmoyan/ScoreSpider/blob/master/ScoreSpider.py" target="_blank" rel="external">ScoreSpider.py</a></p>
 
       
     </div>
@@ -283,13 +284,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a></p>
+        <p><span>本文标题:</span><a href="/2016/08/16/用Python爬取教务系统成绩/">用Python爬取教务系统成绩</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 chenjiangtao 的个人博客">chenjiangtao</a></p>
-        <p><span>发布时间:</span>2016年07月06日 - 23时34分</p>
-        <p><span>最后更新:</span>2016年07月15日 - 00时26分</p>
+        <p><span>发布时间:</span>2016年08月16日 - 22时27分</p>
+        <p><span>最后更新:</span>2016年08月17日 - 00时59分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/07/06/用hexo搭建github静态博客/" title="用github Page和hexo搭建个人静态博客">http://itdog.cf/2016/07/06/用hexo搭建github静态博客/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://itdog.cf/2016/07/06/用hexo搭建github静态博客/　　作者: chenjiangtao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/16/用Python爬取教务系统成绩/" title="用Python爬取教务系统成绩">http://itdog.cf/2016/08/16/用Python爬取教务系统成绩/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://itdog.cf/2016/08/16/用Python爬取教务系统成绩/　　作者: chenjiangtao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -302,15 +303,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/07/09/vim配置和常用命令/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          vim配置和常用命令
-        
-      </div>
-    </a>
   
+    <a href="/2016/08/07/vim自动补全插件YouCompleteMe安装/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vim自动补全插件YouCompleteMe安装</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -319,7 +316,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装和配置git"><span class="toc-number">1.</span> <span class="toc-text">安装和配置git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-检查ssh-key"><span class="toc-number">1.1.</span> <span class="toc-text">1.检查ssh key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、备份和移除原来的ssh-key设置："><span class="toc-number">1.2.</span> <span class="toc-text">2、备份和移除原来的ssh key设置：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、生成新的SSH-Key："><span class="toc-number">1.3.</span> <span class="toc-text">3、生成新的SSH Key：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、添加SSH-Key到GitHub"><span class="toc-number">1.4.</span> <span class="toc-text">4、添加SSH Key到GitHub</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nodejs"><span class="toc-number">2.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo"><span class="toc-number">3.</span> <span class="toc-text">安装hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化Hexo"><span class="toc-number">3.1.</span> <span class="toc-text">初始化Hexo</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将博客同步到github"><span class="toc-number">4.</span> <span class="toc-text">将博客同步到github</span></a></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -367,7 +364,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/07/06/用hexo搭建github静态博客/" data-title="用github Page和hexo搭建个人静态博客" data-url="http://itdog.cf/2016/07/06/用hexo搭建github静态博客/"></div>
+    <div class="ds-thread" data-thread-key="2016/08/16/用Python爬取教务系统成绩/" data-title="用Python爬取教务系统成绩" data-url="http://itdog.cf/2016/08/16/用Python爬取教务系统成绩/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -390,13 +387,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/07/09/vim配置和常用命令/" title="上一篇: vim配置和常用命令">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/08/07/vim自动补全插件YouCompleteMe安装/" title="下一篇: vim自动补全插件YouCompleteMe安装">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/16/用Python爬取教务系统成绩/">用Python爬取教务系统成绩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/vim自动补全插件YouCompleteMe安装/">vim自动补全插件YouCompleteMe安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/26/c&c++中const的用法和区别/">C&C++中const的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/vim安装Markdown实时预览插件/">vim安装markdown实时预览工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/vim配置和常用命令/">vim配置和常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a></li></ul>
