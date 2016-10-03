@@ -5,13 +5,51 @@
     
   <url>
     <loc>http://itdog.cf/2016/10/03/ubuntu%E8%8B%B1%E6%96%87%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81/</loc>
-    <lastmod>2016-10-03T11:35:47.708Z</lastmod>
+    <lastmod>2016-10-03T11:48:30.472Z</lastmod>
     <data>
         <display>
         <title>Ubuntu英文服务器安装中文支持</title>
         <pubTime>2016-10-03T11:02:33.000Z</pubTime>
         
-        <tag>-服务器 -linux</tag>
+        <tag>服务器</tag>
+         
+        <tag>linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://itdog.cf/2016/07/06/%E7%94%A8hexo%E6%90%AD%E5%BB%BAgithub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2016-10-03T11:47:54.680Z</lastmod>
+    <data>
+        <display>
+        <title>用github Page和hexo搭建个人静态博客</title>
+        <pubTime>2016-07-06T15:34:45.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://itdog.cf/2016/07/14/vim%E5%AE%89%E8%A3%85Markdown%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88%E6%8F%92%E4%BB%B6/</loc>
+    <lastmod>2016-10-03T11:47:02.624Z</lastmod>
+    <data>
+        <display>
+        <title>vim安装markdown实时预览工具</title>
+        <pubTime>2016-07-14T14:10:21.000Z</pubTime>
+        
+        <tag>Markdown</tag>
+         
+        <tag>vim</tag>
          
          
            
@@ -65,42 +103,6 @@
         <tag>c</tag>
          
         <tag>c++</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://itdog.cf/2016/07/14/vim%E5%AE%89%E8%A3%85Markdown%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88%E6%8F%92%E4%BB%B6/</loc>
-    <lastmod>2016-07-26T14:28:31.666Z</lastmod>
-    <data>
-        <display>
-        <title>vim安装markdown实时预览工具</title>
-        <pubTime>2016-07-14T14:10:21.000Z</pubTime>
-        
-        <tag>Markdown</tag>
-         
-        <tag>vim</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://itdog.cf/2016/07/06/%E7%94%A8hexo%E6%90%AD%E5%BB%BAgithub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2016-07-14T16:26:41.635Z</lastmod>
-    <data>
-        <display>
-        <title>用github Page和hexo搭建个人静态博客</title>
-        <pubTime>2016-07-06T15:34:45.000Z</pubTime>
-        
-        <tag>hexo</tag>
          
          
            
