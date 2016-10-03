@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itdog.cf/"/>
-  <updated>2016-08-16T16:59:17.018Z</updated>
+  <updated>2016-10-03T11:35:47.708Z</updated>
   <id>http://itdog.cf/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu英文服务器安装中文支持</title>
+    <link href="http://itdog.cf/2016/10/03/ubuntu%E8%8B%B1%E6%96%87%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81/"/>
+    <id>http://itdog.cf/2016/10/03/ubuntu英文服务器安装中文支持/</id>
+    <published>2016-10-03T11:02:33.000Z</published>
+    <updated>2016-10-03T11:35:47.708Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;安装中文支持： &lt;code&gt;sudo apt-get install language-pack-zh-hant language-pack-zh-hans&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;添加中文支持：&lt;br&gt; &lt;code&gt;sudo vim /var/lib/locales/supported.d/local&lt;/code&gt;&lt;br&gt;设置如下：&lt;br&gt;&lt;code&gt;en_US.UTF-8 UTF-8&lt;/code&gt;&lt;br&gt;&lt;code&gt;zh_CN.UTF-8 UTF-8&lt;/code&gt;&lt;br&gt;&lt;code&gt;zh_CN.GBK GBK&lt;/code&gt;&lt;br&gt;&lt;code&gt;zh_CN GB2312&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;运行sudo locale-gen 或者　sudo dpkg-reconfigure locales&lt;br&gt;3.　修改配置文件:&lt;br&gt;    &lt;code&gt;sudo vim /etc/environment&lt;/code&gt;&lt;br&gt;    1、如果你需要一个纯中文的系统的话，设定LC_ALL= zh_CN.XXXX，或者LANG= zh_CN.XXXX都可以.&lt;br&gt;    2、如果你只想要一个可以输入中文的环境，而保持菜单、标题，系统信息等等为英文界面，那么只需要设定 LC_CTYPE＝zh_CN.XXXX，LANG=en_US.XXXX就可以了。&lt;br&gt;    我的配置如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PATH=&amp;quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games&amp;quot;
+LANG=&amp;quot;en_US.UTF-8&amp;quot;
+LANGUAGE=&amp;quot;zh_CN:zh:en_US:en&amp;quot;
+LC_CTYPE=&amp;quot;zh_CN.UTF-8&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/bing19880122/article/details/5047172&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;refre&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;安装中文支持： &lt;code&gt;sudo apt-get install language-pack-zh-hant language-pack-zh-hans&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;添加中文支持：&lt;br&gt; &lt;code&gt;sudo vim /var/lib/
+    
+    </summary>
+    
+    
+      <category term="-服务器 -linux" scheme="http://itdog.cf/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-linux/"/>
+    
+  </entry>
   
   <entry>
     <title>用Python爬取教务系统成绩</title>
@@ -164,9 +196,9 @@ let g:mkdp_command_for_global = 0
     </summary>
     
     
-      <category term="vim" scheme="http://itdog.cf/tags/vim/"/>
-    
       <category term="Markdown" scheme="http://itdog.cf/tags/Markdown/"/>
+    
+      <category term="vim" scheme="http://itdog.cf/tags/vim/"/>
     
   </entry>
   

@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016 | Chenjiangtao&#39;s Blog</title>
+  <title>Ubuntu英文服务器安装中文支持 | Chenjiangtao&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Learning And Share">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chenjiangtao's Blog">
-<meta property="og:url" content="http://itdog.cf/archives/2016/index.html">
+  <meta name="description" content="安装中文支持： sudo apt-get install language-pack-zh-hant language-pack-zh-hans
+添加中文支持： sudo vim /var/lib/locales/supported.d/local设置如下：en_US.UTF-8 UTF-8zh_CN.UTF-8 UTF-8zh_CN.GBK GBKzh_CN GB2312
+
+运行sudo lo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu英文服务器安装中文支持">
+<meta property="og:url" content="http://itdog.cf/2016/10/03/ubuntu英文服务器安装中文支持/index.html">
 <meta property="og:site_name" content="Chenjiangtao's Blog">
-<meta property="og:description" content="Learning And Share">
+<meta property="og:description" content="安装中文支持： sudo apt-get install language-pack-zh-hant language-pack-zh-hans
+添加中文支持： sudo vim /var/lib/locales/supported.d/local设置如下：en_US.UTF-8 UTF-8zh_CN.UTF-8 UTF-8zh_CN.GBK GBKzh_CN GB2312
+
+运行sudo lo">
+<meta property="og:updated_time" content="2016-10-03T11:35:47.708Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chenjiangtao's Blog">
-<meta name="twitter:description" content="Learning And Share">
+<meta name="twitter:title" content="Ubuntu英文服务器安装中文支持">
+<meta name="twitter:description" content="安装中文支持： sudo apt-get install language-pack-zh-hant language-pack-zh-hans
+添加中文支持： sudo vim /var/lib/locales/supported.d/local设置如下：en_US.UTF-8 UTF-8zh_CN.UTF-8 UTF-8zh_CN.GBK GBKzh_CN GB2312
+
+运行sudo lo">
   
     <link rel="alternative" href="/atom.xml" title="Chenjiangtao&#39;s Blog" type="application/atom+xml">
   
@@ -36,8 +46,8 @@
           fancybox: true,
           animate: false,
           isHome: false,
-          isPost: false,
-          isArchive: true,
+          isPost: true,
+          isArchive: false,
           isTag: false,
           isCategory: false,
           open_in_new: false
@@ -216,240 +226,199 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-ubuntu英文服务器安装中文支持" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/10/03/ubuntu英文服务器安装中文支持/" class="archive-article-date">
-      <time datetime="2016-10-03T11:02:33.000Z" itemprop="datePublished">10-03</time>
+    <div class="article-meta">
+      <a href="/2016/10/03/ubuntu英文服务器安装中文支持/" class="article-date">
+      <time datetime="2016-10-03T11:02:33.000Z" itemprop="datePublished">2016-10-03</time>
 </a>
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/03/ubuntu英文服务器安装中文支持/">Ubuntu英文服务器安装中文支持</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ubuntu英文服务器安装中文支持
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器-linux/">-服务器 -linux</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li>安装中文支持： <code>sudo apt-get install language-pack-zh-hant language-pack-zh-hans</code></li>
+<li>添加中文支持：<br> <code>sudo vim /var/lib/locales/supported.d/local</code><br>设置如下：<br><code>en_US.UTF-8 UTF-8</code><br><code>zh_CN.UTF-8 UTF-8</code><br><code>zh_CN.GBK GBK</code><br><code>zh_CN GB2312</code></li>
+</ol>
+<p>运行sudo locale-gen 或者　sudo dpkg-reconfigure locales<br>3.　修改配置文件:<br>    <code>sudo vim /etc/environment</code><br>    1、如果你需要一个纯中文的系统的话，设定LC_ALL= zh_CN.XXXX，或者LANG= zh_CN.XXXX都可以.<br>    2、如果你只想要一个可以输入中文的环境，而保持菜单、标题，系统信息等等为英文界面，那么只需要设定 LC_CTYPE＝zh_CN.XXXX，LANG=en_US.XXXX就可以了。<br>    我的配置如下：</p>
+<pre><code>PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games&quot;
+LANG=&quot;en_US.UTF-8&quot;
+LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;
+LC_CTYPE=&quot;zh_CN.UTF-8&quot;
+</code></pre><p><a href="http://blog.csdn.net/bing19880122/article/details/5047172" target="_blank" rel="external">refre</a></p>
+
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/08/16/用Python爬取教务系统成绩/" class="archive-article-date">
-      <time datetime="2016-08-16T14:27:56.000Z" itemprop="datePublished">08-16</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/16/用Python爬取教务系统成绩/">用Python爬取教务系统成绩</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python,</a></li></ul>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/10/03/ubuntu英文服务器安装中文支持/">Ubuntu英文服务器安装中文支持</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 chenjiangtao 的个人博客">chenjiangtao</a></p>
+        <p><span>发布时间:</span>2016年10月03日 - 19时02分</p>
+        <p><span>最后更新:</span>2016年10月03日 - 19时35分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/10/03/ubuntu英文服务器安装中文支持/" title="Ubuntu英文服务器安装中文支持">http://itdog.cf/2016/10/03/ubuntu英文服务器安装中文支持/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://itdog.cf/2016/10/03/ubuntu英文服务器安装中文支持/　　作者: chenjiangtao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/16/用Python爬取教务系统成绩/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用Python爬取教务系统成绩</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/08/07/vim自动补全插件YouCompleteMe安装/" class="archive-article-date">
-      <time datetime="2016-08-06T16:14:11.000Z" itemprop="datePublished">08-07</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/07/vim自动补全插件YouCompleteMe安装/">vim自动补全插件YouCompleteMe安装</a>
-    </h1>
-  
 
-        <div class="article-info info-on-archive">
-          
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/10/03/ubuntu英文服务器安装中文支持/" data-title="Ubuntu英文服务器安装中文支持" data-url="http://itdog.cf/2016/10/03/ubuntu英文服务器安装中文支持/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chmoyan"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/08/16/用Python爬取教务系统成绩/" title="下一篇: 用Python爬取教务系统成绩">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/03/ubuntu英文服务器安装中文支持/">Ubuntu英文服务器安装中文支持</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/16/用Python爬取教务系统成绩/">用Python爬取教务系统成绩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/vim自动补全插件YouCompleteMe安装/">vim自动补全插件YouCompleteMe安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/26/c&c++中const的用法和区别/">C&C++中const的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/vim安装Markdown实时预览插件/">vim安装markdown实时预览工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/vim配置和常用命令/">vim配置和常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/07/26/c&c++中const的用法和区别/" class="archive-article-date">
-      <time datetime="2016-07-26T14:13:23.000Z" itemprop="datePublished">07-26</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/26/c&c++中const的用法和区别/">C&amp;C++中const的用法</a>
-    </h1>
-  
 
-        <div class="article-info info-on-archive">
-          
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c++</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/07/14/vim安装Markdown实时预览插件/" class="archive-article-date">
-      <time datetime="2016-07-14T14:10:21.000Z" itemprop="datePublished">07-14</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/14/vim安装Markdown实时预览插件/">vim安装markdown实时预览工具</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/07/09/vim配置和常用命令/" class="archive-article-date">
-      <time datetime="2016-07-09T15:19:46.000Z" itemprop="datePublished">07-09</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/09/vim配置和常用命令/">vim配置和常用命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/07/06/用hexo搭建github静态博客/" class="archive-article-date">
-      <time datetime="2016-07-06T15:34:45.000Z" itemprop="datePublished">07-06</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
@@ -537,17 +506,6 @@ ga('send', 'pageview');
         };
     })
 </script>
-
-    <button class="hide-labels">TAG 开关</button>
-    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
