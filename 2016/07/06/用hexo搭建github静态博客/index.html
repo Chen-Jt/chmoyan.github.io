@@ -13,7 +13,7 @@
 <meta property="og:description" content="本文主要记录自己用hexo 和 github pages搭建这个博客的过程遇到的问题，对整个搭建过程不详细描述，使用的环境为kali2.0 64位。">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c28b7899jw1f5a7vru74dj20fp02rq3r.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/c28b7899jw1f5a8j03huvj20hb0a9tbu.jpg">
-<meta property="og:updated_time" content="2016-10-03T11:47:54.680Z">
+<meta property="og:updated_time" content="2018-01-21T13:08:56.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用github Page和hexo搭建个人静态博客">
 <meta name="twitter:description" content="本文主要记录自己用hexo 和 github pages搭建这个博客的过程遇到的问题，对整个搭建过程不详细描述，使用的环境为kali2.0 64位。">
@@ -147,7 +147,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python,</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a>
+                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a>
                     </div>
                 </section>
                 
@@ -269,10 +269,11 @@
 <h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>nodejs 安装好后就可以安装hexo了，安装过程中会有警告出现，但是并不影响使用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> npm install hexo-cli -g</span><br><span class="line"><span class="variable">$sudo</span> npm install hexo --save</span><br><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
 <p>安装成功会有如下信息<br><img src="http://ww4.sinaimg.cn/large/c28b7899jw1f5a8j03huvj20hb0a9tbu.jpg" alt="安装hexo"></p>
-<h4 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h4><p>在你的用户home目录下新建一个hexo目录,这个目录将是hexo的工作目录，名字可以随便起<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/</span><br><span class="line">$ mkdir hexo</span><br><span class="line"><span class="variable">$cd</span> hexo</span><br><span class="line"><span class="variable">$hexo</span> init</span><br><span class="line"><span class="variable">$sudo</span> npm install</span><br></pre></td></tr></table></figure></p>
-<p>第一次使用hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
+<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><p>在你的用户home目录下新建一个hexo目录,这个目录将是hexo的工作目录，名字可以随便起<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/</span><br><span class="line">$ mkdir hexo</span><br><span class="line"><span class="variable">$cd</span> hexo</span><br><span class="line"><span class="variable">$hexo</span> init</span><br></pre></td></tr></table></figure></p>
+<p>新建文章<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n [layout] &lt;title&gt; <span class="comment">#其中layout为文章布局，默认为post title 为文章名</span></span><br></pre></td></tr></table></figure></p>
+<p>生成页面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
 <p>接着会有提示<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure></p>
-<p>在浏览器中打开<a href="http://localhost:4000/即可看见生成的博客。" target="_blank" rel="external">http://localhost:4000/即可看见生成的博客。</a></p>
+<p>在浏览器中打开<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 即可看见生成的博客。</p>
 <h3 id="将博客同步到github"><a href="#将博客同步到github" class="headerlink" title="将博客同步到github"></a>将博客同步到github</h3><p>还是在刚才创建的那个目录下面，在_config.yml文件中，找到Deployment，然后按照如下修改yourname为你的github用户名。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></p>
 <p>修改完成后执行<em>sudo npm install hexo-deployer-git –save</em>来安装所需的插件<br>接下来执行 hexo d 即可同步到github，超级方便有木有！<br>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
@@ -286,7 +287,7 @@
         <p><span>本文标题:</span><a href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 chenjiangtao 的个人博客">chenjiangtao</a></p>
         <p><span>发布时间:</span>2016年07月06日 - 23时34分</p>
-        <p><span>最后更新:</span>2016年10月03日 - 19时47分</p>
+        <p><span>最后更新:</span>2018年01月21日 - 21时08分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/07/06/用hexo搭建github静态博客/" title="用github Page和hexo搭建个人静态博客">http://itdog.cf/2016/07/06/用hexo搭建github静态博客/</a>
             <span class="copy-path" data-clipboard-text="原文: http://itdog.cf/2016/07/06/用hexo搭建github静态博客/　　作者: chenjiangtao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -319,7 +320,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装和配置git"><span class="toc-number">1.</span> <span class="toc-text">安装和配置git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-检查ssh-key"><span class="toc-number">1.1.</span> <span class="toc-text">1.检查ssh key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、备份和移除原来的ssh-key设置："><span class="toc-number">1.2.</span> <span class="toc-text">2、备份和移除原来的ssh key设置：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、生成新的SSH-Key："><span class="toc-number">1.3.</span> <span class="toc-text">3、生成新的SSH Key：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、添加SSH-Key到GitHub"><span class="toc-number">1.4.</span> <span class="toc-text">4、添加SSH Key到GitHub</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nodejs"><span class="toc-number">2.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo"><span class="toc-number">3.</span> <span class="toc-text">安装hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化Hexo"><span class="toc-number">3.1.</span> <span class="toc-text">初始化Hexo</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将博客同步到github"><span class="toc-number">4.</span> <span class="toc-text">将博客同步到github</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装和配置git"><span class="toc-number">1.</span> <span class="toc-text">安装和配置git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-检查ssh-key"><span class="toc-number">1.1.</span> <span class="toc-text">1.检查ssh key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、备份和移除原来的ssh-key设置："><span class="toc-number">1.2.</span> <span class="toc-text">2、备份和移除原来的ssh key设置：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、生成新的SSH-Key："><span class="toc-number">1.3.</span> <span class="toc-text">3、生成新的SSH Key：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、添加SSH-Key到GitHub"><span class="toc-number">1.4.</span> <span class="toc-text">4、添加SSH Key到GitHub</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nodejs"><span class="toc-number">2.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo"><span class="toc-number">3.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化Hexo"><span class="toc-number">4.</span> <span class="toc-text">初始化Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将博客同步到github"><span class="toc-number">5.</span> <span class="toc-text">将博客同步到github</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -399,7 +400,7 @@
             <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/03/ubuntu英文服务器安装中文支持/">Ubuntu英文服务器安装中文支持</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/16/用Python爬取教务系统成绩/">用Python爬取教务系统成绩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/vim自动补全插件YouCompleteMe安装/">vim自动补全插件YouCompleteMe安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/26/c&c++中const的用法和区别/">C&C++中const的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/vim安装Markdown实时预览插件/">vim安装markdown实时预览工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/vim配置和常用命令/">vim配置和常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/21/mysql常用命令/">mysql常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/03/ubuntu英文服务器安装中文支持/">Ubuntu英文服务器安装中文支持</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/16/用Python爬取教务系统成绩/">用Python爬取教务系统成绩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/vim自动补全插件YouCompleteMe安装/">vim自动补全插件YouCompleteMe安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/26/c&c++中const的用法和区别/">C&C++中const的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/vim安装Markdown实时预览插件/">vim安装markdown实时预览工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/vim配置和常用命令/">vim配置和常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
@@ -429,7 +430,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2016 chenjiangtao
+                &copy; 2018 chenjiangtao
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman

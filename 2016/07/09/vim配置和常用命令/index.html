@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://itdog.cf/2016/07/09/vim配置和常用命令/index.html">
 <meta property="og:site_name" content="Chenjiangtao's Blog">
 <meta property="og:description" content="本文主要记录自己平常编程过程中使用vim的一些设置和命令等，记录的可能会有些乱，每隔一段时间会进行整理，方便自己遗忘时查阅。">
-<meta property="og:updated_time" content="2016-07-14T14:03:31.299Z">
+<meta property="og:updated_time" content="2018-01-13T08:12:24.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim配置和常用命令">
 <meta name="twitter:description" content="本文主要记录自己平常编程过程中使用vim的一些设置和命令等，记录的可能会有些乱，每隔一段时间会进行整理，方便自己遗忘时查阅。">
@@ -144,7 +144,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python,</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a>
+                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a>
                     </div>
                 </section>
                 
@@ -256,8 +256,25 @@
       
           
         <h3 id="1、vim基本配置"><a href="#1、vim基本配置" class="headerlink" title="1、vim基本配置"></a>1、vim基本配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"语法高亮</span><br><span class="line">syntax on</span><br><span class="line"></span><br><span class="line">"</span>显示行号</span><br><span class="line"><span class="built_in">set</span> number</span><br><span class="line"></span><br><span class="line"><span class="string">"侦测文件类型</span><br><span class="line">filetype on</span><br><span class="line">"</span> 不同文件设置不同缩进</span><br><span class="line">filetype indent on</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">"</span><br><span class="line">"</span>文本格式和排版</span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">"</span><br><span class="line">"</span>自动格式化</span><br><span class="line"><span class="built_in">set</span> formatoptions=tcrqn</span><br><span class="line"><span class="string">"继承前一行的缩进方式</span><br><span class="line">set autoindent</span><br><span class="line">"</span>为C程序提供自动缩进</span><br><span class="line"><span class="built_in">set</span> smartindent</span><br><span class="line"></span><br><span class="line"><span class="string">"统一缩进为4</span><br><span class="line">set tabstop=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line"></span><br><span class="line">"</span>不要使用空格代替Tab</span><br><span class="line"><span class="built_in">set</span> noexpandtab</span><br><span class="line"></span><br><span class="line"><span class="string">"不自动换行</span><br><span class="line">set nowrap</span><br><span class="line">"</span>行首段首自动缩进</span><br><span class="line"><span class="built_in">set</span> smarttab</span><br><span class="line"></span><br><span class="line"><span class="string">"显示匹配的括号</span><br><span class="line">set showmatch</span><br><span class="line"></span><br><span class="line">"</span>修改保存后自动生成备份</span><br><span class="line"><span class="keyword">if</span> has(<span class="string">"vms"</span>)</span><br><span class="line">	<span class="built_in">set</span> nobackup</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">set</span> backup</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
-<p>2、vim使用技巧</p>
-<p>同时打开多个文件<br>:vsplit   左右分屏<br>:split 上下分屏</p>
+<h3 id="2、vim使用技巧"><a href="#2、vim使用技巧" class="headerlink" title="2、vim使用技巧"></a>2、vim使用技巧</h3><ul>
+<li><p>同时打开多个文件<br><code>:vsplit</code>   左右分屏<br><code>:split</code> 上下分屏</p>
+</li>
+<li><p>粘贴模式<br><code>set paste</code> 取消自动缩进<br><code>set nopaste</code> 退出粘贴模式</p>
+</li>
+<li><p>多行注释</p>
+<ol>
+<li>按CTRL+V进入（VISUAL BLOCK)模式</li>
+<li>移动光标选择多行的开头</li>
+<li>选择完毕后按大写的I</li>
+<li>输入//</li>
+<li>按ESC退出</li>
+</ol>
+</li>
+<li><p>取消多行注释<br>前两步与上面相同,选择完毕后按d,然后按ESC</p>
+</li>
+<li><p>查找替换</p>
+</li>
+</ul>
 
       
     </div>
@@ -269,7 +286,7 @@
         <p><span>本文标题:</span><a href="/2016/07/09/vim配置和常用命令/">vim配置和常用命令</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 chenjiangtao 的个人博客">chenjiangtao</a></p>
         <p><span>发布时间:</span>2016年07月09日 - 23时19分</p>
-        <p><span>最后更新:</span>2016年07月14日 - 22时03分</p>
+        <p><span>最后更新:</span>2018年01月13日 - 16时12分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/07/09/vim配置和常用命令/" title="vim配置和常用命令">http://itdog.cf/2016/07/09/vim配置和常用命令/</a>
             <span class="copy-path" data-clipboard-text="原文: http://itdog.cf/2016/07/09/vim配置和常用命令/　　作者: chenjiangtao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -307,7 +324,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、vim基本配置"><span class="toc-number">1.</span> <span class="toc-text">1、vim基本配置</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、vim基本配置"><span class="toc-number">1.</span> <span class="toc-text">1、vim基本配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、vim使用技巧"><span class="toc-number">2.</span> <span class="toc-text">2、vim使用技巧</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -389,7 +406,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/03/ubuntu英文服务器安装中文支持/">Ubuntu英文服务器安装中文支持</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/16/用Python爬取教务系统成绩/">用Python爬取教务系统成绩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/vim自动补全插件YouCompleteMe安装/">vim自动补全插件YouCompleteMe安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/26/c&c++中const的用法和区别/">C&C++中const的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/vim安装Markdown实时预览插件/">vim安装markdown实时预览工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/vim配置和常用命令/">vim配置和常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/21/mysql常用命令/">mysql常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/03/ubuntu英文服务器安装中文支持/">Ubuntu英文服务器安装中文支持</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/16/用Python爬取教务系统成绩/">用Python爬取教务系统成绩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/vim自动补全插件YouCompleteMe安装/">vim自动补全插件YouCompleteMe安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/26/c&c++中const的用法和区别/">C&C++中const的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/vim安装Markdown实时预览插件/">vim安装markdown实时预览工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/vim配置和常用命令/">vim配置和常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
@@ -419,7 +436,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2016 chenjiangtao
+                &copy; 2018 chenjiangtao
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman

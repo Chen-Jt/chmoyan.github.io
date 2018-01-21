@@ -5,26 +5,20 @@
   
   <title>用Python爬取教务系统成绩 | Chenjiangtao&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文主要参考:python爬虫实战之模拟正方教务系统登录查询成绩
-每次查成绩都要手动登录去查，最近在学Python,就想着用Python写一个脚本自己获取成绩，由于学校用的是方正教务系统，于是随手搜了一下有现成的，但是并不能直接用，经过摸索修改终于可以了。先看看效果好吧，暴露了我的学渣属性……
-我们学校教务系统总共采取了三种措施来认证访问的合法性：    1,随机的Hash值    2,随机的Vi">
+  <meta name="description" content="(已失效)本文主要介绍用Python爬取教务系统成绩课表等，由于相关访问点已经关闭，故已经无法使用，不过还是有一定的参考价值。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用Python爬取教务系统成绩">
 <meta property="og:url" content="http://itdog.cf/2016/08/16/用Python爬取教务系统成绩/index.html">
 <meta property="og:site_name" content="Chenjiangtao's Blog">
-<meta property="og:description" content="本文主要参考:python爬虫实战之模拟正方教务系统登录查询成绩
-每次查成绩都要手动登录去查，最近在学Python,就想着用Python写一个脚本自己获取成绩，由于学校用的是方正教务系统，于是随手搜了一下有现成的，但是并不能直接用，经过摸索修改终于可以了。先看看效果好吧，暴露了我的学渣属性……
-我们学校教务系统总共采取了三种措施来认证访问的合法性：    1,随机的Hash值    2,随机的Vi">
+<meta property="og:description" content="(已失效)本文主要介绍用Python爬取教务系统成绩课表等，由于相关访问点已经关闭，故已经无法使用，不过还是有一定的参考价值。">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/c28b7899jw1f6vz3stsdhj20gl0fi0wj.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c28b7899jw1f6vznxelvfj20eu03a3yz.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/c28b7899jw1f6w01b4wwdj20wl0ghagd.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/c28b7899jw1f6w0n2u7aij20er0fctcn.jpg">
-<meta property="og:updated_time" content="2016-08-16T16:59:17.018Z">
+<meta property="og:updated_time" content="2018-01-13T05:45:14.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Python爬取教务系统成绩">
-<meta name="twitter:description" content="本文主要参考:python爬虫实战之模拟正方教务系统登录查询成绩
-每次查成绩都要手动登录去查，最近在学Python,就想着用Python写一个脚本自己获取成绩，由于学校用的是方正教务系统，于是随手搜了一下有现成的，但是并不能直接用，经过摸索修改终于可以了。先看看效果好吧，暴露了我的学渣属性……
-我们学校教务系统总共采取了三种措施来认证访问的合法性：    1,随机的Hash值    2,随机的Vi">
+<meta name="twitter:description" content="(已失效)本文主要介绍用Python爬取教务系统成绩课表等，由于相关访问点已经关闭，故已经无法使用，不过还是有一定的参考价值。">
 <meta name="twitter:image" content="http://ww3.sinaimg.cn/large/c28b7899jw1f6vz3stsdhj20gl0fi0wj.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Chenjiangtao&#39;s Blog" type="application/atom+xml">
@@ -155,7 +149,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python,</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a>
+                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a>
                     </div>
                 </section>
                 
@@ -256,7 +250,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python,</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -287,7 +281,7 @@
         <p><span>本文标题:</span><a href="/2016/08/16/用Python爬取教务系统成绩/">用Python爬取教务系统成绩</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 chenjiangtao 的个人博客">chenjiangtao</a></p>
         <p><span>发布时间:</span>2016年08月16日 - 22时27分</p>
-        <p><span>最后更新:</span>2016年08月17日 - 00时59分</p>
+        <p><span>最后更新:</span>2018年01月13日 - 13时45分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/08/16/用Python爬取教务系统成绩/" title="用Python爬取教务系统成绩">http://itdog.cf/2016/08/16/用Python爬取教务系统成绩/</a>
             <span class="copy-path" data-clipboard-text="原文: http://itdog.cf/2016/08/16/用Python爬取教务系统成绩/　　作者: chenjiangtao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -407,7 +401,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/03/ubuntu英文服务器安装中文支持/">Ubuntu英文服务器安装中文支持</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/16/用Python爬取教务系统成绩/">用Python爬取教务系统成绩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/vim自动补全插件YouCompleteMe安装/">vim自动补全插件YouCompleteMe安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/26/c&c++中const的用法和区别/">C&C++中const的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/vim安装Markdown实时预览插件/">vim安装markdown实时预览工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/vim配置和常用命令/">vim配置和常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/21/mysql常用命令/">mysql常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/03/ubuntu英文服务器安装中文支持/">Ubuntu英文服务器安装中文支持</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/16/用Python爬取教务系统成绩/">用Python爬取教务系统成绩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/vim自动补全插件YouCompleteMe安装/">vim自动补全插件YouCompleteMe安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/26/c&c++中const的用法和区别/">C&C++中const的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/vim安装Markdown实时预览插件/">vim安装markdown实时预览工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/vim配置和常用命令/">vim配置和常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/用hexo搭建github静态博客/">用github Page和hexo搭建个人静态博客</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
@@ -437,7 +431,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2016 chenjiangtao
+                &copy; 2018 chenjiangtao
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
